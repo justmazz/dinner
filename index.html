@@ -6,9 +6,10 @@
     <!-- Meta Tags for Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Lato|Nunito&display=swap" rel="stylesheet">
     <!-- Inline CSS for Styling -->
     <style>
+        /* Existing Styles */
         body {
             margin: 0;
             font-family: 'Lato', sans-serif;
@@ -88,11 +89,11 @@
             margin: 20px;
             font-size: 1.5em;
         }
-        .about-us, .how-it-works, .contact-us {
+        .about-us, .how-it-works {
             background-color: #fff;
             padding: 40px 20px;
         }
-        .about-us p, .how-it-works p, .contact-us p {
+        .about-us p, .how-it-works p {
             max-width: 800px;
             margin: 0 auto;
             font-size: 1.1em;
@@ -154,6 +155,206 @@
             nav a {
                 margin: 5px 10px;
             }
+        }
+        /* New Contact Form Styles */
+        /* Include the font 'Nunito' */
+        .arch_contact_us_duplicate * {
+            font-family: 'Nunito', sans-serif;
+        }
+        .arch_contact_us_duplicate .icon-block svg {
+            width: 100%;
+            height: 100%;
+        }
+        .arch_contact_us_duplicate .icon-block {
+            width: 30px;
+            height: 30px;
+        }
+        .arch_contact_us_duplicate .text-blk {
+            margin: 0;
+            padding: 0;
+            line-height: 25px;
+        }
+        .arch_contact_us_duplicate .responsive-container-block {
+            min-height: 75px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin: 0 auto;
+        }
+        .arch_contact_us_duplicate .responsive-cell-block {
+            min-height: 75px;
+        }
+        .arch_contact_us_duplicate .responsive-container-block.big-container {
+            justify-content: center;
+            align-items: center;
+            padding: 0 50px;
+            background-color: #fdfcea;
+        }
+        .arch_contact_us_duplicate .responsive-container-block.container {
+            max-width: 1100px;
+            justify-content: space-evenly;
+        }
+        .arch_contact_us_duplicate .text-blk.section-head {
+            font-size: 60px;
+            line-height: 65px;
+            margin-bottom: 24px;
+        }
+        .arch_contact_us_duplicate .text-blk.section-subhead {
+            font-size: 14px;
+            line-height: 18px;
+            color: #7e7e7e;
+        }
+        .arch_contact_us_duplicate .input {
+            width: 100%;
+            height: 54px;
+            border-radius: 5px;
+            border: 2px solid #767676;
+            padding: 1px 16px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            background-color: #f3f2cf;
+        }
+        .arch_contact_us_duplicate .textinput {
+            width: 100%;
+            height: 125px;
+            border: 1px solid #767676;
+            padding: 16px;
+            font-size: 16px;
+            margin-bottom: 27px;
+            background-color: #f3f2cf;
+        }
+        .arch_contact_us_duplicate .button {
+            height: 50px;
+            min-width: 240px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            margin-bottom: 60px;
+            background-color: #b0ab4d;
+        }
+        .arch_contact_us_duplicate .form-wrapper {
+            border-bottom: 4px solid #f3f2cf;
+            margin-bottom: 60px;
+        }
+        .arch_contact_us_duplicate .social-media-icon-container {
+            display: flex;
+            max-width: 400px;
+            justify-content: space-evenly;
+        }
+        .arch_contact_us_duplicate .icon-block.social-icon {
+            fill: #b0ab4d;
+        }
+        /* Responsive CSS */
+        @media (max-width: 1024px) {
+            .arch_contact_us_duplicate .text-blk.section-head {
+                font-size: 55px;
+                line-height: 60px;
+            }
+            .arch_contact_us_duplicate .responsive-container-block.container {
+                justify-content: space-between;
+            }
+        }
+        @media (max-width: 768px) {
+            .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-desk-5.wk-tab-10.wk-ipadp-5 {
+                margin-bottom: 80px;
+                text-align: center;
+            }
+            .arch_contact_us_duplicate .input {
+                height: 45px;
+            }
+            .arch_contact_us_duplicate .responsive-container-block.container {
+                justify-content: space-evenly;
+                margin: 80px 0;
+            }
+        }
+        @media (max-width: 500px) {
+            .arch_contact_us_duplicate .text-blk.section-head {
+                font-size: 40px;
+                line-height: 45px;
+            }
+            .arch_contact_us_duplicate .responsive-container-block.big-container {
+                padding: 0 20px;
+            }
+            .arch_contact_us_duplicate .input {
+                height: 40px;
+            }
+            .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-desk-5.wk-tab-10.wk-ipadp-5 {
+                padding: 0 20px;
+            }
+            .arch_contact_us_duplicate .button {
+                width: 100%;
+                height: 50px;
+                margin-bottom: 40px;
+            }
+            .arch_contact_us_duplicate .form-wrapper {
+                margin-bottom: 40px;
+            }
+            .arch_contact_us_duplicate .icon-block {
+                width: 25px;
+                height: 25px;
+            }
+        }
+        /* Responsive Grid Classes */
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+        .wk-desk-1 { width: 8.333333%; }
+        .wk-desk-2 { width: 16.666667%; }
+        .wk-desk-3 { width: 25%; }
+        .wk-desk-4 { width: 33.333333%; }
+        .wk-desk-5 { width: 41.666667%; }
+        .wk-desk-6 { width: 50%; }
+        .wk-desk-7 { width: 58.333333%; }
+        .wk-desk-8 { width: 66.666667%; }
+        .wk-desk-9 { width: 75%; }
+        .wk-desk-10 { width: 83.333333%; }
+        .wk-desk-11 { width: 91.666667%; }
+        .wk-desk-12 { width: 100%; }
+        @media (max-width: 1024px) {
+            .wk-ipadp-1 { width: 8.333333%; }
+            .wk-ipadp-2 { width: 16.666667%; }
+            .wk-ipadp-3 { width: 25%; }
+            .wk-ipadp-4 { width: 33.333333%; }
+            .wk-ipadp-5 { width: 41.666667%; }
+            .wk-ipadp-6 { width: 50%; }
+            .wk-ipadp-7 { width: 58.333333%; }
+            .wk-ipadp-8 { width: 66.666667%; }
+            .wk-ipadp-9 { width: 75%; }
+            .wk-ipadp-10 { width: 83.333333%; }
+            .wk-ipadp-11 { width: 91.666667%; }
+            .wk-ipadp-12 { width: 100%; }
+        }
+        @media (max-width: 768px) {
+            .wk-tab-1 { width: 8.333333%; }
+            .wk-tab-2 { width: 16.666667%; }
+            .wk-tab-3 { width: 25%; }
+            .wk-tab-4 { width: 33.333333%; }
+            .wk-tab-5 { width: 41.666667%; }
+            .wk-tab-6 { width: 50%; }
+            .wk-tab-7 { width: 58.333333%; }
+            .wk-tab-8 { width: 66.666667%; }
+            .wk-tab-9 { width: 75%; }
+            .wk-tab-10 { width: 83.333333%; }
+            .wk-tab-11 { width: 91.666667%; }
+            .wk-tab-12 { width: 100%; }
+        }
+        @media (max-width: 500px) {
+            .wk-mobile-1 { width: 8.333333%; }
+            .wk-mobile-2 { width: 16.666667%; }
+            .wk-mobile-3 { width: 25%; }
+            .wk-mobile-4 { width: 33.333333%; }
+            .wk-mobile-5 { width: 41.666667%; }
+            .wk-mobile-6 { width: 50%; }
+            .wk-mobile-7 { width: 58.333333%; }
+            .wk-mobile-8 { width: 66.666667%; }
+            .wk-mobile-9 { width: 75%; }
+            .wk-mobile-10 { width: 83.333333%; }
+            .wk-mobile-11 { width: 91.666667%; }
+            .wk-mobile-12 { width: 100%; }
         }
     </style>
 </head>
@@ -248,25 +449,50 @@
         </div>
     </section>
 
-    <!-- Contact Us Section -->
-    <section class="contact-us" id="contact-us">
-        <div class="section-title">Contact Us</div>
-        <p>Questions or ready to get involved? We'd love to hear from you!</p>
-        <!-- Contact Form -->
-        <form id="contact-form">
-            <label for="contact-name">Name:</label><br>
-            <input type="text" id="contact-name" name="contact-name" required><br><br>
-            <label for="contact-email">Email:</label><br>
-            <input type="email" id="contact-email" name="contact-email" required><br><br>
-            <label for="contact-message">Message:</label><br>
-            <textarea id="contact-message" name="contact-message" rows="5" required></textarea><br><br>
-            <input type="submit" value="Send Message">
-        </form>
-        <p>
-            <strong>Email:</strong> <a href="mailto:contact@dinnerandashow.org">contact@dinnerandashow.org</a><br>
-            <strong>Phone:</strong> (123) 456-7890<br>
-            <strong>Address:</strong> 123 Community Lane, Hometown, USA
-        </p>
+    <!-- New Contact Us Section -->
+    <section id="contact-us">
+        <!-- New Contact Form -->
+        <div class="arch_contact_us_duplicate">
+            <div class="responsive-container-block big-container">
+                <div class="responsive-container-block container">
+                    <div class="responsive-cell-block wk-mobile-12 wk-desk-5 wk-tab-10 wk-ipadp-5" id="ih6s">
+                        <p class="text-blk section-head">
+                            Get in touch dolor sit
+                        </p>
+                        <p class="text-blk section-subhead">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        </p>
+                    </div>
+                    <div class="responsive-cell-block wk-ipadp-6 wk-mobile-12 wk-desk-5 wk-tab-9" id="i6df">
+                        <div class="form-wrapper">
+                            <input class="input input-element" name="Name" placeholder="Name">
+                            <input class="input input-element" name="Contact Number" placeholder="Contact Number">
+                            <input class="input input-element" name="Email" placeholder="Email">
+                            <textarea class="textinput input-element" placeholder="Message"></textarea>
+                            <button class="button">
+                                Send
+                            </button>
+                        </div>
+                        <div class="social-media-icon-container">
+                            <!-- Social Media Icons -->
+                            <!-- You can replace these SVGs with actual links if needed -->
+                            <div class="icon-block social-icon">
+                                <!-- Facebook Icon -->
+                                <!-- SVG code omitted for brevity -->
+                            </div>
+                            <div class="icon-block social-icon">
+                                <!-- Instagram Icon -->
+                                <!-- SVG code omitted for brevity -->
+                            </div>
+                            <div class="icon-block social-icon">
+                                <!-- Twitter Icon -->
+                                <!-- SVG code omitted for brevity -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer Section -->
@@ -352,24 +578,6 @@
 
             leaderboardContent.appendChild(donorList);
         });
-
-        // Handle Contact Form Submission
-        const contactForm = document.getElementById('contact-form');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Collect form data
-            const name = document.getElementById('contact-name').value;
-            const email = document.getElementById('contact-email').value;
-            const message = document.getElementById('contact-message').value;
-
-            // For demonstration, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received.`);
-
-            // Reset the form
-            contactForm.reset();
-        });
-
-        // Smooth Scroll for In-Page Links (Already enabled via CSS scroll-behavior)
 
         // Additional Interactive Features
         // Example: Change CTA button text on hover
