@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner and a Show</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #4CAF50;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            flex: 1;
+            margin: 0 10px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 15px;
+        }
+
+        .subscribe-section {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .subscribe-section input[type="email"] {
+            padding: 10px;
+            font-size: 1.2em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .subscribe-section button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dinner and a Show</h1>
+        <p>Pairing amazing dining experiences with unforgettable live entertainment</p>
+        <a href="#subscribe" class="cta-button">Get Notified!</a>
+    </header>
+
+    <div class="container">
+        <section class="features">
+            <div class="feature-item">
+                <h3>Curated Dining Experiences</h3>
+                <p>Enjoy hand-picked dining locations designed to elevate your experience.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Exclusive Performances</h3>
+                <p>Witness intimate live performances from top artists in unique settings.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Personalized Itineraries</h3>
+                <p>We create customized experiences tailored to your taste and preferences.</p>
+            </div>
+        </section>
+
+        <section class="subscribe-section" id="subscribe">
+            <h2>Stay In The Loop!</h2>
+            <p>Sign up for updates on upcoming events, exclusive offers, and more.</p>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button onclick="subscribe()">Subscribe</button>
+            <p id="confirmation" style="margin-top: 10px;"></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dinner and a Show. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function subscribe() {
+            const emailInput = document.getElementById('email');
+            const confirmationMessage = document.getElementById('confirmation');
+
+            if (emailInput.value === '') {
+                confirmationMessage.style.color = 'red';
+                confirmationMessage.textContent = 'Please enter a valid email address.';
+            } else {
+                confirmationMessage.style.color = 'green';
+                confirmationMessage.textContent = 'Thank you for subscribing!';
+                emailInput.value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
