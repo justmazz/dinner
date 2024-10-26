@@ -13,38 +13,38 @@
         body {
             margin: 0;
             font-family: 'Open Sans', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #FFF8E1; /* Light warm background */
+            color: #4E342E; /* Dark brown */
         }
         header, nav, section, footer {
             padding: 20px;
         }
         header {
-            background-color: #2C3E50;
-            color: #ecf0f1;
+            background-color: #FFE0B2; /* Light orange */
+            color: #4E342E;
             text-align: center;
         }
         nav {
-            background-color: #34495E;
+            background-color: #FFB74D; /* Warm orange */
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
         nav a {
             margin: 10px 15px;
-            color: #ecf0f1;
+            color: #4E342E;
             text-decoration: none;
             font-weight: 600;
             position: relative;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #1ABC9C;
+            color: #D84315; /* Darker warm orange */
         }
         nav a::after {
             content: '';
             height: 2px;
-            background: #1ABC9C;
+            background: #D84315;
             width: 0;
             position: absolute;
             left: 50%;
@@ -56,11 +56,11 @@
             left: 0;
         }
         .hero {
-            background-color: #1ABC9C;
-            color: #fff;
+            background-color: #FFE0B2; /* Light orange */
+            color: #4E342E;
             text-align: center;
             padding: 60px 20px;
-            background-image: linear-gradient(135deg, #1ABC9C 0%, #16A085 100%);
+            background-image: linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%);
         }
         .hero h1 {
             font-size: 2.8em;
@@ -75,45 +75,48 @@
             display: inline-block;
             margin: 10px;
             padding: 15px 25px;
-            background-color: #fff;
-            color: #1ABC9C;
+            background-color: #FF8A65; /* Bright orange */
+            color: #fff;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
             transition: background-color 0.3s, color 0.3s;
         }
         .cta-buttons a:hover {
-            background-color: #16A085;
+            background-color: #D84315; /* Darker orange */
             color: #fff;
         }
         /* Section Background Colors */
         .counters {
-            background-color: #ECF0F1;
+            background-color: #FFF3E0; /* Very light warm color */
         }
         .about-us {
-            background-color: #BDC3C7;
+            background-color: #FFE0B2; /* Light orange */
         }
         .how-it-works {
-            background-color: #ECF0F1;
+            background-color: #FFF3E0;
         }
         .donate-tickets {
-            background-color: #BDC3C7;
+            background-color: #FFE0B2;
         }
         .partners {
-            background-color: #ECF0F1;
+            background-color: #FFF3E0;
         }
         .recent-nights {
-            background-color: #BDC3C7;
+            background-color: #FFE0B2;
         }
         .leaderboard {
-            background-color: #ECF0F1;
+            background-color: #FFF3E0;
         }
         .join-us {
-            background-color: #1ABC9C;
-            color: #fff;
+            background-color: #FFCC80; /* Slightly darker orange */
+            color: #4E342E;
         }
         .contact-us {
-            background-color: #BDC3C7;
+            background-color: #FFE0B2;
+        }
+        .sign-up {
+            background-color: #FFF3E0;
         }
         /* Section Titles */
         .section-title {
@@ -121,6 +124,7 @@
             margin-bottom: 30px;
             font-weight: 700;
             text-align: center;
+            color: #D84315; /* Darker warm orange */
         }
         /* Counters */
         .counter-item {
@@ -130,12 +134,13 @@
             font-weight: 600;
         }
         /* About Us & How It Works */
-        .about-us p, .how-it-works p, .donate-tickets p, .partners p {
+        .about-us p, .how-it-works p, .donate-tickets p, .partners p, .join-us p {
             max-width: 800px;
             margin: 0 auto 20px;
             font-size: 1.15em;
             line-height: 1.8em;
             font-weight: 300;
+            color: #4E342E;
         }
         .how-it-works ol {
             max-width: 800px;
@@ -144,6 +149,8 @@
             font-size: 1.15em;
             line-height: 1.8em;
             font-weight: 300;
+            color: #4E342E;
+            padding-left: 20px;
         }
         .how-it-works ol li {
             margin-bottom: 20px;
@@ -151,7 +158,7 @@
         /* Donate Tickets */
         .donate-tickets .email-address {
             font-size: 1.4em;
-            color: #e74c3c;
+            color: #E64A19; /* Warm red */
             font-weight: 600;
         }
         /* Partners Section */
@@ -176,10 +183,12 @@
         .partner-item h3 {
             margin-top: 0;
             font-weight: 700;
+            color: #D84315;
         }
         .partner-item p {
             margin: 10px 0;
             font-weight: 300;
+            color: #4E342E;
         }
         /* Recent Nights Out Table */
         .recent-nights-table {
@@ -189,6 +198,7 @@
             width: 100%;
             font-size: 1em;
             overflow-x: auto;
+            background-color: #fff;
         }
         .recent-nights-table th, .recent-nights-table td {
             padding: 15px;
@@ -196,22 +206,24 @@
             border-bottom: 1px solid #ddd;
         }
         .recent-nights-table th {
-            background-color: #34495E;
-            color: #ecf0f1;
+            background-color: #FFB74D; /* Warm orange */
+            color: #4E342E;
             font-weight: 600;
         }
         .recent-nights-table tr:hover {
-            background-color: #f1f1f1;
+            background-color: #f9f9f9;
         }
         /* Leaderboard */
         .leaderboard-content {
             max-width: 800px;
             margin: 0 auto;
             text-align: left;
+            color: #4E342E;
         }
         .leaderboard-content h3 {
             margin-top: 30px;
             font-weight: 700;
+            color: #D84315;
         }
         .leaderboard-content ul {
             list-style-type: none;
@@ -221,6 +233,7 @@
             margin-bottom: 10px;
             font-size: 1.1em;
             font-weight: 300;
+            color: #4E342E;
         }
         /* Join Us Section */
         .join-us p {
@@ -229,58 +242,69 @@
             font-size: 1.2em;
             line-height: 1.8em;
             font-weight: 300;
+            color: #4E342E;
         }
         .join-us .cta-buttons a {
-            background-color: #fff;
-            color: #1ABC9C;
+            background-color: #FF8A65; /* Bright orange */
+            color: #fff;
             margin: 10px;
         }
         .join-us .cta-buttons a:hover {
-            background-color: #16A085;
+            background-color: #D84315; /* Darker orange */
             color: #fff;
         }
-        /* Footer */
-        footer {
-            background-color: #2C3E50;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 20px;
-        }
-        footer p {
-            margin: 5px 0;
+        /* Sign Up Section */
+        .sign-up p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 1.15em;
+            line-height: 1.8em;
             font-weight: 300;
+            color: #4E342E;
+            text-align: center;
         }
-        footer a {
-            color: #1ABC9C;
+        .sign-up .form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .sign-up .input, .sign-up .textarea {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-family: 'Open Sans', sans-serif;
+            color: #4E342E;
+        }
+        .sign-up .input:focus, .sign-up .textarea:focus {
+            border-color: #FF8A65;
+            outline: none;
+        }
+        .sign-up .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #FF8A65; /* Bright orange */
+            color: #fff;
             text-decoration: none;
-            margin: 0 5px;
+            border-radius: 30px;
+            font-size: 16px;
             font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            .section-title {
-                font-size: 2em;
-            }
-            .cta-buttons a {
-                padding: 10px 20px;
-            }
-            nav a {
-                margin: 5px 10px;
-            }
-            .partner-item {
-                width: 100%;
-            }
-            .recent-nights-table th, .recent-nights-table td {
-                padding: 10px;
-            }
+        .sign-up .button:hover {
+            background-color: #D84315; /* Darker orange */
         }
         /* Contact Us Section Styles */
-        /* Restoring previous Contact Us styles */
         .arch_contact_us_duplicate * {
             font-family: 'Nunito', sans-serif;
+            color: #4E342E;
         }
         .arch_contact_us_duplicate .icon-block svg {
             width: 100%;
@@ -310,167 +334,129 @@
             justify-content: center;
             align-items: center;
             padding: 0 50px;
-            background-color: #fdfcea;
+            background-color: #FFE0B2; /* Match the contact section background */
         }
         .arch_contact_us_duplicate .responsive-container-block.container {
             max-width: 1100px;
             justify-content: space-evenly;
         }
         .arch_contact_us_duplicate .text-blk.section-head {
-            font-size: 60px;
-            line-height: 65px;
+            font-size: 2.5em;
+            line-height: 1.2em;
             margin-bottom: 24px;
+            color: #D84315;
+            text-align: center;
         }
         .arch_contact_us_duplicate .text-blk.section-subhead {
-            font-size: 14px;
-            line-height: 18px;
-            color: #7e7e7e;
+            font-size: 1.1em;
+            line-height: 1.6em;
+            color: #4E342E;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
         }
         .arch_contact_us_duplicate .input {
             width: 100%;
-            height: 54px;
+            height: 50px;
             border-radius: 5px;
-            border: 2px solid #767676;
-            padding: 1px 16px;
+            border: 1px solid #ccc;
+            padding: 0 15px;
             font-size: 16px;
             margin-bottom: 15px;
-            background-color: #f3f2cf;
+            font-family: 'Open Sans', sans-serif;
+            color: #4E342E;
         }
         .arch_contact_us_duplicate .textinput {
             width: 100%;
             height: 125px;
-            border: 1px solid #767676;
-            padding: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 15px;
             font-size: 16px;
             margin-bottom: 27px;
-            background-color: #f3f2cf;
+            resize: vertical;
+            font-family: 'Open Sans', sans-serif;
+            color: #4E342E;
+        }
+        .arch_contact_us_duplicate .input:focus, .arch_contact_us_duplicate .textinput:focus {
+            border-color: #FF8A65;
+            outline: none;
         }
         .arch_contact_us_duplicate .button {
             height: 50px;
             min-width: 240px;
             font-size: 16px;
-            color: white;
+            color: #fff;
             border: none;
             margin-bottom: 60px;
-            background-color: #b0ab4d;
+            background-color: #FF8A65;
             cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+        .arch_contact_us_duplicate .button:hover {
+            background-color: #D84315;
         }
         .arch_contact_us_duplicate .form-wrapper {
-            border-bottom: 4px solid #f3f2cf;
+            border-bottom: 4px solid #FFB74D;
             margin-bottom: 60px;
         }
         .arch_contact_us_duplicate .social-media-icon-container {
             display: flex;
             max-width: 400px;
             justify-content: space-evenly;
+            margin: 0 auto;
         }
         .arch_contact_us_duplicate .icon-block.social-icon {
-            fill: #b0ab4d;
+            fill: #D84315;
         }
-        /* Responsive CSS for Contact Us */
-        @media (max-width: 1024px) {
-            .arch_contact_us_duplicate .text-blk.section-head {
-                font-size: 55px;
-                line-height: 60px;
-            }
-            .arch_contact_us_duplicate .responsive-container-block.container {
-                justify-content: space-between;
-            }
+        /* Footer */
+        footer {
+            background-color: #FFB74D; /* Warm orange */
+            color: #4E342E;
+            text-align: center;
+            padding: 20px;
         }
+        footer p {
+            margin: 5px 0;
+            font-weight: 300;
+        }
+        footer a {
+            color: #D84315;
+            text-decoration: none;
+            margin: 0 5px;
+            font-weight: 600;
+        }
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-desk-5.wk-tab-10.wk-ipadp-5 {
-                margin-bottom: 80px;
-                text-align: center;
+            .hero h1 {
+                font-size: 2.2em;
             }
-            .arch_contact_us_duplicate .input {
-                height: 45px;
+            .section-title {
+                font-size: 2em;
             }
-            .arch_contact_us_duplicate .responsive-container-block.container {
-                justify-content: space-evenly;
-                margin: 80px 0;
+            .cta-buttons a {
+                padding: 10px 20px;
             }
-        }
-        @media (max-width: 500px) {
-            .arch_contact_us_duplicate .text-blk.section-head {
-                font-size: 40px;
-                line-height: 45px;
+            nav a {
+                margin: 5px 10px;
             }
-            .arch_contact_us_duplicate .responsive-container-block.big-container {
-                padding: 0 20px;
-            }
-            .arch_contact_us_duplicate .input {
-                height: 40px;
-            }
-            .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-desk-5.wk-tab-10.wk-ipadp-5 {
-                padding: 0 20px;
-            }
-            .arch_contact_us_duplicate .button {
+            .partner-item {
                 width: 100%;
-                height: 50px;
-                margin-bottom: 40px;
             }
-            .arch_contact_us_duplicate .form-wrapper {
-                margin-bottom: 40px;
+            .recent-nights-table th, .recent-nights-table td {
+                padding: 10px;
             }
-            .arch_contact_us_duplicate .icon-block {
-                width: 25px;
-                height: 25px;
+            .sign-up .form-wrapper {
+                padding: 20px;
             }
-        }
-        /* Responsive Grid Classes */
-        .wk-desk-1 { width: 8.333333%; }
-        .wk-desk-2 { width: 16.666667%; }
-        .wk-desk-3 { width: 25%; }
-        .wk-desk-4 { width: 33.333333%; }
-        .wk-desk-5 { width: 41.666667%; }
-        .wk-desk-6 { width: 50%; }
-        .wk-desk-7 { width: 58.333333%; }
-        .wk-desk-8 { width: 66.666667%; }
-        .wk-desk-9 { width: 75%; }
-        .wk-desk-10 { width: 83.333333%; }
-        .wk-desk-11 { width: 91.666667%; }
-        .wk-desk-12 { width: 100%; }
-        @media (max-width: 1024px) {
-            .wk-ipadp-1 { width: 8.333333%; }
-            .wk-ipadp-2 { width: 16.666667%; }
-            .wk-ipadp-3 { width: 25%; }
-            .wk-ipadp-4 { width: 33.333333%; }
-            .wk-ipadp-5 { width: 41.666667%; }
-            .wk-ipadp-6 { width: 50%; }
-            .wk-ipadp-7 { width: 58.333333%; }
-            .wk-ipadp-8 { width: 66.666667%; }
-            .wk-ipadp-9 { width: 75%; }
-            .wk-ipadp-10 { width: 83.333333%; }
-            .wk-ipadp-11 { width: 91.666667%; }
-            .wk-ipadp-12 { width: 100%; }
-        }
-        @media (max-width: 768px) {
-            .wk-tab-1 { width: 8.333333%; }
-            .wk-tab-2 { width: 16.666667%; }
-            .wk-tab-3 { width: 25%; }
-            .wk-tab-4 { width: 33.333333%; }
-            .wk-tab-5 { width: 41.666667%; }
-            .wk-tab-6 { width: 50%; }
-            .wk-tab-7 { width: 58.333333%; }
-            .wk-tab-8 { width: 66.666667%; }
-            .wk-tab-9 { width: 75%; }
-            .wk-tab-10 { width: 83.333333%; }
-            .wk-tab-11 { width: 91.666667%; }
-            .wk-tab-12 { width: 100%; }
-        }
-        @media (max-width: 500px) {
-            .wk-mobile-1 { width: 8.333333%; }
-            .wk-mobile-2 { width: 16.666667%; }
-            .wk-mobile-3 { width: 25%; }
-            .wk-mobile-4 { width: 33.333333%; }
-            .wk-mobile-5 { width: 41.666667%; }
-            .wk-mobile-6 { width: 50%; }
-            .wk-mobile-7 { width: 58.333333%; }
-            .wk-mobile-8 { width: 66.666667%; }
-            .wk-mobile-9 { width: 75%; }
-            .wk-mobile-10 { width: 83.333333%; }
-            .wk-mobile-11 { width: 91.666667%; }
-            .wk-mobile-12 { width: 100%; }
+            .arch_contact_us_duplicate .responsive-container-block.container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .arch_contact_us_duplicate .text-blk.section-head {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
@@ -500,7 +486,7 @@
         <div class="cta-buttons">
             <a href="#donate-tickets" id="donate-tickets-btn">Donate Tickets</a>
             <a href="#partners" id="become-partner-btn">Become a Partner</a>
-            <a href="#sign-up" id="sign-up-btn">Sign Up for a Night Out</a>
+            <a href="#family-sign-up" id="sign-up-btn">Sign Up for a Night Out</a>
         </div>
     </section>
 
@@ -639,7 +625,22 @@
         <div class="cta-buttons">
             <a href="#donate-tickets" id="donate-tickets-signup">Season Ticket Holders: Donate Tickets</a>
             <a href="#partners" id="partner-restaurants-signup">Restaurants: Become a Partner</a>
-            <a href="#contact-us" id="families-signup">Families: Sign Up for a Night Out</a>
+            <a href="#family-sign-up" id="families-signup">Families: Sign Up for a Night Out</a>
+        </div>
+    </section>
+
+    <!-- Sign Up Section -->
+    <section class="sign-up" id="family-sign-up">
+        <div class="section-title">Families: Sign Up for a Night Out</div>
+        <p>If you have a family member with a terminal illness and would like to enjoy a special night out, please fill out the form below.</p>
+        <div class="form-wrapper">
+            <form action="#" method="post">
+                <input class="input" type="text" name="name" placeholder="Your Name" required>
+                <input class="input" type="email" name="email" placeholder="Your Email" required>
+                <input class="input" type="tel" name="phone" placeholder="Your Phone Number" required>
+                <textarea class="textarea" name="message" placeholder="Tell us about your family and any special requests" required></textarea>
+                <button class="button" type="submit">Submit</button>
+            </form>
         </div>
     </section>
 
@@ -651,7 +652,7 @@
                 <div class="responsive-container-block container">
                     <div class="responsive-cell-block wk-mobile-12 wk-desk-5 wk-tab-10 wk-ipadp-5" id="ih6s">
                         <p class="text-blk section-head">
-                            Get in touch
+                            Get in Touch
                         </p>
                         <p class="text-blk section-subhead">
                             We'd love to hear from you! Whether you're interested in donating tickets, becoming a partner, or have any questions.
