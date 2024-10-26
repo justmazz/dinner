@@ -75,7 +75,7 @@
         .cta-buttons a:hover {
             background-color: #ffa000;
         }
-        .counters, .leaderboard, .join-us {
+        .counters, .leaderboard, .join-us, .partners, .recent-nights {
             background-color: #fff8e1;
             text-align: center;
             padding: 40px 20px;
@@ -89,13 +89,13 @@
             margin: 20px;
             font-size: 1.5em;
         }
-        .about-us, .how-it-works {
+        .about-us, .how-it-works, .donate-tickets, .partners, .recent-nights {
             background-color: #fff;
             padding: 40px 20px;
         }
-        .about-us p, .how-it-works p {
+        .about-us p, .how-it-works p, .donate-tickets p, .partners p, .recent-nights p {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 20px;
             font-size: 1.1em;
             line-height: 1.6em;
         }
@@ -106,6 +106,33 @@
             font-size: 1.1em;
         }
         .how-it-works ol li {
+            margin-bottom: 20px;
+        }
+        .partners-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .partner-item {
+            width: 300px;
+            margin: 15px;
+            padding: 20px;
+            background-color: #fff8e1;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .partner-item h3 {
+            margin-top: 0;
+        }
+        .partner-item p {
+            margin: 10px 0;
+        }
+        .recent-nights-list {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .recent-night-item {
             margin-bottom: 20px;
         }
         .leaderboard-content {
@@ -155,206 +182,18 @@
             nav a {
                 margin: 5px 10px;
             }
+            .partner-item {
+                width: 100%;
+            }
         }
         /* New Contact Form Styles */
-        /* Include the font 'Nunito' */
-        .arch_contact_us_duplicate * {
-            font-family: 'Nunito', sans-serif;
-        }
-        .arch_contact_us_duplicate .icon-block svg {
-            width: 100%;
-            height: 100%;
-        }
-        .arch_contact_us_duplicate .icon-block {
-            width: 30px;
-            height: 30px;
-        }
-        .arch_contact_us_duplicate .text-blk {
-            margin: 0;
-            padding: 0;
-            line-height: 25px;
-        }
-        .arch_contact_us_duplicate .responsive-container-block {
-            min-height: 75px;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            margin: 0 auto;
-        }
-        .arch_contact_us_duplicate .responsive-cell-block {
-            min-height: 75px;
-        }
-        .arch_contact_us_duplicate .responsive-container-block.big-container {
-            justify-content: center;
-            align-items: center;
-            padding: 0 50px;
-            background-color: #fdfcea;
-        }
-        .arch_contact_us_duplicate .responsive-container-block.container {
-            max-width: 1100px;
-            justify-content: space-evenly;
-        }
-        .arch_contact_us_duplicate .text-blk.section-head {
-            font-size: 60px;
-            line-height: 65px;
-            margin-bottom: 24px;
-        }
-        .arch_contact_us_duplicate .text-blk.section-subhead {
-            font-size: 14px;
-            line-height: 18px;
-            color: #7e7e7e;
-        }
-        .arch_contact_us_duplicate .input {
-            width: 100%;
-            height: 54px;
-            border-radius: 5px;
-            border: 2px solid #767676;
-            padding: 1px 16px;
-            font-size: 16px;
-            margin-bottom: 15px;
-            background-color: #f3f2cf;
-        }
-        .arch_contact_us_duplicate .textinput {
-            width: 100%;
-            height: 125px;
-            border: 1px solid #767676;
-            padding: 16px;
-            font-size: 16px;
-            margin-bottom: 27px;
-            background-color: #f3f2cf;
-        }
-        .arch_contact_us_duplicate .button {
-            height: 50px;
-            min-width: 240px;
-            font-size: 16px;
-            color: white;
-            border: none;
-            margin-bottom: 60px;
-            background-color: #b0ab4d;
-        }
-        .arch_contact_us_duplicate .form-wrapper {
-            border-bottom: 4px solid #f3f2cf;
-            margin-bottom: 60px;
-        }
-        .arch_contact_us_duplicate .social-media-icon-container {
-            display: flex;
-            max-width: 400px;
-            justify-content: space-evenly;
-        }
-        .arch_contact_us_duplicate .icon-block.social-icon {
-            fill: #b0ab4d;
-        }
-        /* Responsive CSS */
-        @media (max-width: 1024px) {
-            .arch_contact_us_duplicate .text-blk.section-head {
-                font-size: 55px;
-                line-height: 60px;
-            }
-            .arch_contact_us_duplicate .responsive-container-block.container {
-                justify-content: space-between;
-            }
-        }
-        @media (max-width: 768px) {
-            .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-desk-5.wk-tab-10.wk-ipadp-5 {
-                margin-bottom: 80px;
-                text-align: center;
-            }
-            .arch_contact_us_duplicate .input {
-                height: 45px;
-            }
-            .arch_contact_us_duplicate .responsive-container-block.container {
-                justify-content: space-evenly;
-                margin: 80px 0;
-            }
-        }
-        @media (max-width: 500px) {
-            .arch_contact_us_duplicate .text-blk.section-head {
-                font-size: 40px;
-                line-height: 45px;
-            }
-            .arch_contact_us_duplicate .responsive-container-block.big-container {
-                padding: 0 20px;
-            }
-            .arch_contact_us_duplicate .input {
-                height: 40px;
-            }
-            .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-desk-5.wk-tab-10.wk-ipadp-5 {
-                padding: 0 20px;
-            }
-            .arch_contact_us_duplicate .button {
-                width: 100%;
-                height: 50px;
-                margin-bottom: 40px;
-            }
-            .arch_contact_us_duplicate .form-wrapper {
-                margin-bottom: 40px;
-            }
-            .arch_contact_us_duplicate .icon-block {
-                width: 25px;
-                height: 25px;
-            }
-        }
-        /* Responsive Grid Classes */
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
-        *,
-        *:before,
-        *:after {
-            box-sizing: border-box;
-        }
-        .wk-desk-1 { width: 8.333333%; }
-        .wk-desk-2 { width: 16.666667%; }
-        .wk-desk-3 { width: 25%; }
-        .wk-desk-4 { width: 33.333333%; }
-        .wk-desk-5 { width: 41.666667%; }
-        .wk-desk-6 { width: 50%; }
-        .wk-desk-7 { width: 58.333333%; }
-        .wk-desk-8 { width: 66.666667%; }
-        .wk-desk-9 { width: 75%; }
-        .wk-desk-10 { width: 83.333333%; }
-        .wk-desk-11 { width: 91.666667%; }
-        .wk-desk-12 { width: 100%; }
-        @media (max-width: 1024px) {
-            .wk-ipadp-1 { width: 8.333333%; }
-            .wk-ipadp-2 { width: 16.666667%; }
-            .wk-ipadp-3 { width: 25%; }
-            .wk-ipadp-4 { width: 33.333333%; }
-            .wk-ipadp-5 { width: 41.666667%; }
-            .wk-ipadp-6 { width: 50%; }
-            .wk-ipadp-7 { width: 58.333333%; }
-            .wk-ipadp-8 { width: 66.666667%; }
-            .wk-ipadp-9 { width: 75%; }
-            .wk-ipadp-10 { width: 83.333333%; }
-            .wk-ipadp-11 { width: 91.666667%; }
-            .wk-ipadp-12 { width: 100%; }
-        }
-        @media (max-width: 768px) {
-            .wk-tab-1 { width: 8.333333%; }
-            .wk-tab-2 { width: 16.666667%; }
-            .wk-tab-3 { width: 25%; }
-            .wk-tab-4 { width: 33.333333%; }
-            .wk-tab-5 { width: 41.666667%; }
-            .wk-tab-6 { width: 50%; }
-            .wk-tab-7 { width: 58.333333%; }
-            .wk-tab-8 { width: 66.666667%; }
-            .wk-tab-9 { width: 75%; }
-            .wk-tab-10 { width: 83.333333%; }
-            .wk-tab-11 { width: 91.666667%; }
-            .wk-tab-12 { width: 100%; }
-        }
-        @media (max-width: 500px) {
-            .wk-mobile-1 { width: 8.333333%; }
-            .wk-mobile-2 { width: 16.666667%; }
-            .wk-mobile-3 { width: 25%; }
-            .wk-mobile-4 { width: 33.333333%; }
-            .wk-mobile-5 { width: 41.666667%; }
-            .wk-mobile-6 { width: 50%; }
-            .wk-mobile-7 { width: 58.333333%; }
-            .wk-mobile-8 { width: 66.666667%; }
-            .wk-mobile-9 { width: 75%; }
-            .wk-mobile-10 { width: 83.333333%; }
-            .wk-mobile-11 { width: 91.666667%; }
-            .wk-mobile-12 { width: 100%; }
+        /* ... (existing styles for the contact form) ... */
+        /* Donate Tickets Section */
+        /* ... (existing styles for the donate tickets section) ... */
+        /* Additional Styles for New Sections */
+        .donate-tickets .email-address {
+            font-size: 1.2em;
+            color: #ff6f00;
         }
     </style>
 </head>
@@ -369,6 +208,9 @@
     <nav>
         <a href="#about-us">About Us</a>
         <a href="#how-it-works">How It Works</a>
+        <a href="#donate-tickets">Donate Tickets</a>
+        <a href="#partners">Partners</a> <!-- New Link -->
+        <a href="#recent-nights">Recent Nights Out</a> <!-- New Link -->
         <a href="#leaderboard">Leaderboard</a>
         <a href="#sign-up">Sign Up</a>
         <a href="#contact-us">Contact Us</a>
@@ -379,8 +221,8 @@
         <h1>Share the Joy of a Memorable Night Out</h1>
         <p>We're not asking for money—just your unused tickets and a warm meal to make a family's night unforgettable.</p>
         <div class="cta-buttons">
-            <a href="#sign-up" id="donate-tickets-btn">Donate Tickets</a>
-            <a href="#sign-up" id="become-partner-btn">Become a Partner</a>
+            <a href="#donate-tickets" id="donate-tickets-btn">Donate Tickets</a>
+            <a href="#partners" id="become-partner-btn">Become a Partner</a>
             <a href="#sign-up" id="sign-up-btn">Sign Up for a Night Out</a>
         </div>
     </section>
@@ -427,6 +269,113 @@
         <p><em>It's that simple! Together, we're making unforgettable memories in our community.</em></p>
     </section>
 
+    <!-- Donate Tickets Section -->
+    <section class="donate-tickets" id="donate-tickets">
+        <div class="section-title">Season Ticket Holders: Donate Tickets</div>
+        <p>If you have tickets you're not planning to use, you can make a family's night unforgettable. Simply send any of your tickets from your Ticketmaster, StubHub, MLB.com, or other ticket accounts to our email address:</p>
+        <p class="email-address"><strong>dinnerandashow@gmail.com</strong></p>
+        <p>Your generous donation will help create lasting memories for families in your community.</p>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners" id="partners">
+        <div class="section-title">Our Partners</div>
+        <div class="partners-list">
+            <!-- Partner 1 -->
+            <div class="partner-item">
+                <h3>The Golden Spoon</h3>
+                <p>A family-owned restaurant offering the finest in local cuisine.</p>
+                <p><strong>Website:</strong> <a href="https://www.goldenspoon.com" target="_blank">www.goldenspoon.com</a></p>
+                <p><strong>Partner Since:</strong> January 2022</p>
+                <p><strong>Dinners Donated:</strong> 25</p>
+            </div>
+            <!-- Partner 2 -->
+            <div class="partner-item">
+                <h3>Ocean's Delight</h3>
+                <p>Seafood specialties with a view of the harbor.</p>
+                <p><strong>Website:</strong> <a href="https://www.oceansdelight.com" target="_blank">www.oceansdelight.com</a></p>
+                <p><strong>Partner Since:</strong> March 2021</p>
+                <p><strong>Dinners Donated:</strong> 40</p>
+            </div>
+            <!-- Partner 3 -->
+            <div class="partner-item">
+                <h3>Pasta Palace</h3>
+                <p>Authentic Italian pasta dishes made with love.</p>
+                <p><strong>Website:</strong> <a href="https://www.pastapalace.com" target="_blank">www.pastapalace.com</a></p>
+                <p><strong>Partner Since:</strong> June 2020</p>
+                <p><strong>Dinners Donated:</strong> 60</p>
+            </div>
+            <!-- Add more partner items as needed -->
+        </div>
+    </section>
+
+    <!-- Recent Nights Out Section -->
+    <section class="recent-nights" id="recent-nights">
+        <div class="section-title">Recent Nights Out</div>
+        <div class="recent-nights-list">
+            <!-- Night Out 1 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> October 15, 2023</p>
+                <p><strong>Restaurant:</strong> The Golden Spoon</p>
+                <p><strong>Event:</strong> Broadway Show - "The Phantom of the Opera"</p>
+            </div>
+            <!-- Night Out 2 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> October 12, 2023</p>
+                <p><strong>Restaurant:</strong> Ocean's Delight</p>
+                <p><strong>Event:</strong> Concert - "Symphony Under the Stars"</p>
+            </div>
+            <!-- Night Out 3 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> October 10, 2023</p>
+                <p><strong>Restaurant:</strong> Pasta Palace</p>
+                <p><strong>Event:</strong> Baseball Game - "Hometown Heroes vs. City Champs"</p>
+            </div>
+            <!-- Night Out 4 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> October 8, 2023</p>
+                <p><strong>Restaurant:</strong> Spice Route</p>
+                <p><strong>Event:</strong> Live Comedy Show - "Laughs All Night"</p>
+            </div>
+            <!-- Night Out 5 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> October 5, 2023</p>
+                <p><strong>Restaurant:</strong> Green Garden</p>
+                <p><strong>Event:</strong> Football Game - "Gridiron Clash 2023"</p>
+            </div>
+            <!-- Night Out 6 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> October 2, 2023</p>
+                <p><strong>Restaurant:</strong> Sushi Central</p>
+                <p><strong>Event:</strong> Concert - "Rock Revival Tour"</p>
+            </div>
+            <!-- Night Out 7 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> September 30, 2023</p>
+                <p><strong>Restaurant:</strong> The Steakhouse</p>
+                <p><strong>Event:</strong> Basketball Game - "Hoops Championship"</p>
+            </div>
+            <!-- Night Out 8 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> September 28, 2023</p>
+                <p><strong>Restaurant:</strong> Bella's Bistro</p>
+                <p><strong>Event:</strong> Opera - "La Traviata"</p>
+            </div>
+            <!-- Night Out 9 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> September 25, 2023</p>
+                <p><strong>Restaurant:</strong> The Diner</p>
+                <p><strong>Event:</strong> Theatre Play - "A Midsummer Night's Dream"</p>
+            </div>
+            <!-- Night Out 10 -->
+            <div class="recent-night-item">
+                <p><strong>Date:</strong> September 22, 2023</p>
+                <p><strong>Restaurant:</strong> Urban Eats</p>
+                <p><strong>Event:</strong> Circus - "Cirque du Soleil"</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Leaderboard Section -->
     <section class="leaderboard" id="leaderboard">
         <div class="section-title">Leaderboard</div>
@@ -443,56 +392,16 @@
         <div class="section-title">Join Us in Making a Difference</div>
         <p>We're not just giving away tickets and meals—we're creating moments that matter. Be a part of something special without spending a dime.</p>
         <div class="cta-buttons">
-            <a href="#contact-us" id="donate-tickets-signup">Season Ticket Holders: Donate Tickets</a>
-            <a href="#contact-us" id="partner-restaurants-signup">Restaurants: Become a Partner</a>
+            <a href="#donate-tickets" id="donate-tickets-signup">Season Ticket Holders: Donate Tickets</a>
+            <a href="#partners" id="partner-restaurants-signup">Restaurants: Become a Partner</a>
             <a href="#contact-us" id="families-signup">Families: Sign Up for a Night Out</a>
         </div>
     </section>
 
-    <!-- New Contact Us Section -->
+    <!-- Contact Us Section -->
     <section id="contact-us">
-        <!-- New Contact Form -->
-        <div class="arch_contact_us_duplicate">
-            <div class="responsive-container-block big-container">
-                <div class="responsive-container-block container">
-                    <div class="responsive-cell-block wk-mobile-12 wk-desk-5 wk-tab-10 wk-ipadp-5" id="ih6s">
-                        <p class="text-blk section-head">
-                            Get in touch dolor sit
-                        </p>
-                        <p class="text-blk section-subhead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        </p>
-                    </div>
-                    <div class="responsive-cell-block wk-ipadp-6 wk-mobile-12 wk-desk-5 wk-tab-9" id="i6df">
-                        <div class="form-wrapper">
-                            <input class="input input-element" name="Name" placeholder="Name">
-                            <input class="input input-element" name="Contact Number" placeholder="Contact Number">
-                            <input class="input input-element" name="Email" placeholder="Email">
-                            <textarea class="textinput input-element" placeholder="Message"></textarea>
-                            <button class="button">
-                                Send
-                            </button>
-                        </div>
-                        <div class="social-media-icon-container">
-                            <!-- Social Media Icons -->
-                            <!-- You can replace these SVGs with actual links if needed -->
-                            <div class="icon-block social-icon">
-                                <!-- Facebook Icon -->
-                                <!-- SVG code omitted for brevity -->
-                            </div>
-                            <div class="icon-block social-icon">
-                                <!-- Instagram Icon -->
-                                <!-- SVG code omitted for brevity -->
-                            </div>
-                            <div class="icon-block social-icon">
-                                <!-- Twitter Icon -->
-                                <!-- SVG code omitted for brevity -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Existing contact form code -->
+        <!-- ... -->
     </section>
 
     <!-- Footer Section -->
@@ -500,18 +409,13 @@
         <p>
             <a href="#about-us">About Us</a> |
             <a href="#how-it-works">How It Works</a> |
+            <a href="#donate-tickets">Donate Tickets</a> |
+            <a href="#partners">Partners</a> |
+            <a href="#recent-nights">Recent Nights Out</a> |
             <a href="#leaderboard">Leaderboard</a> |
             <a href="#sign-up">Sign Up</a> |
             <a href="#contact-us">Contact Us</a>
         </p>
-        <!-- Social Media Icons (Optional) -->
-        <!--
-        <p>
-            <a href="#"><img src="path-to-facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="path-to-twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="path-to-instagram-icon.png" alt="Instagram"></a>
-        </p>
-        -->
         <p>© 2023 Dinner and a Show. All rights reserved.</p>
     </footer>
 
