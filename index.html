@@ -55,21 +55,46 @@
             width: 100%;
             left: 0;
         }
+        /* Container Class for Consistent Width */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-align: center;
+            color: #D84315; /* Darker warm orange */
+        }
+        /* Hero Section */
         .hero {
             background-color: #FFE0B2; /* Light orange */
             color: #4E342E;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background-image: linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%);
         }
         .hero h1 {
             font-size: 2.8em;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             font-weight: 700;
         }
         .hero p {
             font-size: 1.2em;
             font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .cta-buttons a {
             display: inline-block;
@@ -86,55 +111,16 @@
             background-color: #D84315; /* Darker orange */
             color: #fff;
         }
-        /* Section Background Colors */
-        .counters {
-            background-color: #FFF3E0; /* Very light warm color */
-        }
-        .about-us {
-            background-color: #FFE0B2; /* Light orange */
-        }
-        .how-it-works {
-            background-color: #FFF3E0;
-        }
-        .donate-tickets {
-            background-color: #FFE0B2;
-        }
-        .partners {
-            background-color: #FFF3E0;
-        }
-        .recent-nights {
-            background-color: #FFE0B2;
-        }
-        .leaderboard {
-            background-color: #FFF3E0;
-        }
-        .join-us {
-            background-color: #FFCC80; /* Slightly darker orange */
-            color: #4E342E;
-        }
-        .contact-us {
-            background-color: #FFE0B2;
-        }
-        .sign-up {
-            background-color: #FFF3E0;
-        }
-        /* Section Titles */
-        .section-title {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            font-weight: 700;
-            text-align: center;
-            color: #D84315; /* Darker warm orange */
-        }
-        /* Counters */
-        .counter-item {
+        /* Counters Section */
+        .counters .counter-item {
             display: inline-block;
             margin: 20px;
             font-size: 1.5em;
             font-weight: 600;
+            text-align: center;
         }
-        /* About Us & How It Works */
-        .about-us p, .how-it-works p, .donate-tickets p, .partners p, .join-us p {
+        /* Text Content */
+        .content p, .content ol {
             max-width: 800px;
             margin: 0 auto 20px;
             font-size: 1.15em;
@@ -142,24 +128,18 @@
             font-weight: 300;
             color: #4E342E;
         }
-        .how-it-works ol {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            text-align: left;
-            font-size: 1.15em;
-            line-height: 1.8em;
-            font-weight: 300;
-            color: #4E342E;
+        .content ol {
             padding-left: 20px;
         }
-        .how-it-works ol li {
+        .content ol li {
             margin-bottom: 20px;
         }
-        /* Donate Tickets */
-        .donate-tickets .email-address {
+        /* Email Address Highlight */
+        .email-address {
             font-size: 1.4em;
             color: #E64A19; /* Warm red */
             font-weight: 600;
+            text-align: center;
         }
         /* Partners Section */
         .partners-list {
@@ -197,7 +177,6 @@
             border-collapse: collapse;
             width: 100%;
             font-size: 1em;
-            overflow-x: auto;
             background-color: #fff;
         }
         .recent-nights-table th, .recent-nights-table td {
@@ -214,12 +193,6 @@
             background-color: #f9f9f9;
         }
         /* Leaderboard */
-        .leaderboard-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-            color: #4E342E;
-        }
         .leaderboard-content h3 {
             margin-top: 30px;
             font-weight: 700;
@@ -236,13 +209,10 @@
             color: #4E342E;
         }
         /* Join Us Section */
-        .join-us p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            font-size: 1.2em;
-            line-height: 1.8em;
-            font-weight: 300;
-            color: #4E342E;
+        .join-us .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .join-us .cta-buttons a {
             background-color: #FF8A65; /* Bright orange */
@@ -253,17 +223,8 @@
             background-color: #D84315; /* Darker orange */
             color: #fff;
         }
-        /* Sign Up Section */
-        .sign-up p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            font-size: 1.15em;
-            line-height: 1.8em;
-            font-weight: 300;
-            color: #4E342E;
-            text-align: center;
-        }
-        .sign-up .form-wrapper {
+        /* Sign Up & Contact Us Forms */
+        .form-wrapper {
             max-width: 600px;
             margin: 0 auto;
             background-color: #fff;
@@ -271,7 +232,11 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .sign-up .input, .sign-up .textarea {
+        .form-wrapper form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-wrapper .input, .form-wrapper .textarea {
             width: 100%;
             border-radius: 5px;
             border: 1px solid #ccc;
@@ -281,14 +246,13 @@
             font-family: 'Open Sans', sans-serif;
             color: #4E342E;
         }
-        .sign-up .input:focus, .sign-up .textarea:focus {
+        .form-wrapper .input:focus, .form-wrapper .textarea:focus {
             border-color: #FF8A65;
             outline: none;
         }
-        .sign-up .button {
-            display: inline-block;
+        .form-wrapper .button {
             padding: 15px 30px;
-            background-color: #FF8A65; /* Bright orange */
+            background-color: #FF8A65;
             color: #fff;
             text-decoration: none;
             border-radius: 30px;
@@ -297,117 +261,21 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
+            align-self: center;
         }
-        .sign-up .button:hover {
-            background-color: #D84315; /* Darker orange */
-        }
-        /* Contact Us Section Styles */
-        .arch_contact_us_duplicate * {
-            font-family: 'Nunito', sans-serif;
-            color: #4E342E;
-        }
-        .arch_contact_us_duplicate .icon-block svg {
-            width: 100%;
-            height: 100%;
-        }
-        .arch_contact_us_duplicate .icon-block {
-            width: 30px;
-            height: 30px;
-        }
-        .arch_contact_us_duplicate .text-blk {
-            margin: 0;
-            padding: 0;
-            line-height: 25px;
-        }
-        .arch_contact_us_duplicate .responsive-container-block {
-            min-height: 75px;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 0 auto;
-        }
-        .arch_contact_us_duplicate .responsive-cell-block {
-            min-height: 75px;
-        }
-        .arch_contact_us_duplicate .responsive-container-block.big-container {
-            justify-content: center;
-            align-items: center;
-            padding: 0 50px;
-            background-color: #FFE0B2; /* Match the contact section background */
-        }
-        .arch_contact_us_duplicate .responsive-container-block.container {
-            max-width: 1100px;
-            justify-content: space-evenly;
-        }
-        .arch_contact_us_duplicate .text-blk.section-head {
-            font-size: 2.5em;
-            line-height: 1.2em;
-            margin-bottom: 24px;
-            color: #D84315;
-            text-align: center;
-        }
-        .arch_contact_us_duplicate .text-blk.section-subhead {
-            font-size: 1.1em;
-            line-height: 1.6em;
-            color: #4E342E;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        .arch_contact_us_duplicate .input {
-            width: 100%;
-            height: 50px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            padding: 0 15px;
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-family: 'Open Sans', sans-serif;
-            color: #4E342E;
-        }
-        .arch_contact_us_duplicate .textinput {
-            width: 100%;
-            height: 125px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            padding: 15px;
-            font-size: 16px;
-            margin-bottom: 27px;
-            resize: vertical;
-            font-family: 'Open Sans', sans-serif;
-            color: #4E342E;
-        }
-        .arch_contact_us_duplicate .input:focus, .arch_contact_us_duplicate .textinput:focus {
-            border-color: #FF8A65;
-            outline: none;
-        }
-        .arch_contact_us_duplicate .button {
-            height: 50px;
-            min-width: 240px;
-            font-size: 16px;
-            color: #fff;
-            border: none;
-            margin-bottom: 60px;
-            background-color: #FF8A65;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: background-color 0.3s;
-        }
-        .arch_contact_us_duplicate .button:hover {
+        .form-wrapper .button:hover {
             background-color: #D84315;
         }
-        .arch_contact_us_duplicate .form-wrapper {
-            border-bottom: 4px solid #FFB74D;
-            margin-bottom: 60px;
-        }
-        .arch_contact_us_duplicate .social-media-icon-container {
+        /* Social Media Icons */
+        .social-media-icon-container {
             display: flex;
-            max-width: 400px;
-            justify-content: space-evenly;
-            margin: 0 auto;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
         }
-        .arch_contact_us_duplicate .icon-block.social-icon {
+        .social-media-icon-container .icon-block {
+            width: 40px;
+            height: 40px;
             fill: #D84315;
         }
         /* Footer */
@@ -447,15 +315,13 @@
             .recent-nights-table th, .recent-nights-table td {
                 padding: 10px;
             }
-            .sign-up .form-wrapper {
-                padding: 20px;
-            }
-            .arch_contact_us_duplicate .responsive-container-block.container {
+            .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            .arch_contact_us_duplicate .text-blk.section-head {
-                font-size: 2em;
+            .cta-buttons a {
+                width: 80%;
+                margin: 10px 0;
             }
         }
     </style>
@@ -481,209 +347,224 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Share the Joy of a Memorable Night Out</h1>
-        <p>We're not asking for money—just your unused tickets and a warm meal to make a family's night unforgettable.</p>
-        <div class="cta-buttons">
-            <a href="#donate-tickets" id="donate-tickets-btn">Donate Tickets</a>
-            <a href="#partners" id="become-partner-btn">Become a Partner</a>
-            <a href="#family-sign-up" id="sign-up-btn">Sign Up for a Night Out</a>
+        <div class="container">
+            <h1>Share the Joy of a Memorable Night Out</h1>
+            <p>We're not asking for money—just your unused tickets and a warm meal to make a family's night unforgettable.</p>
+            <div class="cta-buttons">
+                <a href="#donate-tickets" id="donate-tickets-btn">Donate Tickets</a>
+                <a href="#partners" id="become-partner-btn">Become a Partner</a>
+                <a href="#family-sign-up" id="sign-up-btn">Sign Up for a Night Out</a>
+            </div>
         </div>
     </section>
 
     <!-- Counters Section -->
     <section class="counters">
-        <div class="section-title">Our Impact So Far</div>
-        <div class="counter-item">
-            <strong id="tickets-donated">0</strong><br>Tickets Donated
-        </div>
-        <div class="counter-item">
-            <strong id="meals-donated">0</strong><br>Meals Donated
-        </div>
-        <div class="counter-item">
-            <strong id="families-waiting">0</strong><br>Families Waiting
+        <div class="container">
+            <div class="section-title">Our Impact So Far</div>
+            <div class="counter-item">
+                <strong id="tickets-donated">0</strong><br>Tickets Donated
+            </div>
+            <div class="counter-item">
+                <strong id="meals-donated">0</strong><br>Meals Donated
+            </div>
+            <div class="counter-item">
+                <strong id="families-waiting">0</strong><br>Families Waiting
+            </div>
         </div>
     </section>
 
     <!-- About Us Section -->
     <section class="about-us" id="about-us">
-        <div class="section-title">About Us</div>
-        <p>
-            At Dinner and a Show, we believe in the power of community and shared experiences. We're a non-profit connecting families with a terminally ill member to generous season ticket holders and restaurants offering a free meal. No monetary donations—just heartfelt contributions to create a night to remember.
-        </p>
+        <div class="container">
+            <div class="section-title">About Us</div>
+            <div class="content">
+                <p>
+                    At Dinner and a Show, we believe in the power of community and shared experiences. We're a non-profit connecting families with a terminally ill member to generous season ticket holders and restaurants offering a free meal. No monetary donations—just heartfelt contributions to create a night to remember.
+                </p>
+            </div>
+        </div>
     </section>
 
     <!-- How It Works Section -->
     <section class="how-it-works" id="how-it-works">
-        <div class="section-title">How It Works</div>
-        <ol>
-            <li>
-                <strong>Donate Your Tickets</strong><br>
-                Season ticket holders send their unused digital tickets to our email.
-            </li>
-            <li>
-                <strong>Partner Restaurants Offer a Meal</strong><br>
-                Local eateries sign up to provide a complimentary dining experience.
-            </li>
-            <li>
-                <strong>We Make the Match</strong><br>
-                Families in need are paired with tickets and a dinner for a special night out.
-            </li>
-        </ol>
-        <p><em>It's that simple! Together, we're making unforgettable memories in our community.</em></p>
+        <div class="container">
+            <div class="section-title">How It Works</div>
+            <div class="content">
+                <ol>
+                    <li>
+                        <strong>Donate Your Tickets</strong><br>
+                        Season ticket holders send their unused digital tickets to our email.
+                    </li>
+                    <li>
+                        <strong>Partner Restaurants Offer a Meal</strong><br>
+                        Local eateries sign up to provide a complimentary dining experience.
+                    </li>
+                    <li>
+                        <strong>We Make the Match</strong><br>
+                        Families in need are paired with tickets and a dinner for a special night out.
+                    </li>
+                </ol>
+                <p><em>It's that simple! Together, we're making unforgettable memories in our community.</em></p>
+            </div>
+        </div>
     </section>
 
     <!-- Donate Tickets Section -->
     <section class="donate-tickets" id="donate-tickets">
-        <div class="section-title">Season Ticket Holders: Donate Tickets</div>
-        <p>If you have tickets you're not planning to use, you can make a family's night unforgettable. Simply send any of your tickets from your Ticketmaster, StubHub, MLB.com, or other ticket accounts to our email address:</p>
-        <p class="email-address"><strong>dinnerandashow@gmail.com</strong></p>
-        <p>Your generous donation will help create lasting memories for families in your community.</p>
+        <div class="container">
+            <div class="section-title">Season Ticket Holders: Donate Tickets</div>
+            <div class="content">
+                <p>If you have tickets you're not planning to use, you can make a family's night unforgettable. Simply send any of your tickets from your Ticketmaster, StubHub, MLB.com, or other ticket accounts to our email address:</p>
+                <p class="email-address"><strong>dinnerandashow@gmail.com</strong></p>
+                <p>Your generous donation will help create lasting memories for families in your community.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Partners Section -->
     <section class="partners" id="partners">
-        <div class="section-title">Our Partners</div>
-        <div class="partners-list">
-            <!-- Partner 1 -->
-            <div class="partner-item">
-                <h3>The Golden Spoon</h3>
-                <p>A family-owned restaurant offering the finest in local cuisine.</p>
-                <p><strong>Website:</strong> <a href="https://www.goldenspoon.com" target="_blank">www.goldenspoon.com</a></p>
-                <p><strong>Partner Since:</strong> January 2022</p>
-                <p><strong>Dinners Donated:</strong> 25</p>
+        <div class="container">
+            <div class="section-title">Our Partners</div>
+            <div class="partners-list">
+                <!-- Partner 1 -->
+                <div class="partner-item">
+                    <h3>The Golden Spoon</h3>
+                    <p>A family-owned restaurant offering the finest in local cuisine.</p>
+                    <p><strong>Website:</strong> <a href="https://www.goldenspoon.com" target="_blank">www.goldenspoon.com</a></p>
+                    <p><strong>Partner Since:</strong> January 2022</p>
+                    <p><strong>Dinners Donated:</strong> 25</p>
+                </div>
+                <!-- Partner 2 -->
+                <div class="partner-item">
+                    <h3>Ocean's Delight</h3>
+                    <p>Seafood specialties with a view of the harbor.</p>
+                    <p><strong>Website:</strong> <a href="https://www.oceansdelight.com" target="_blank">www.oceansdelight.com</a></p>
+                    <p><strong>Partner Since:</strong> March 2021</p>
+                    <p><strong>Dinners Donated:</strong> 40</p>
+                </div>
+                <!-- Partner 3 -->
+                <div class="partner-item">
+                    <h3>Pasta Palace</h3>
+                    <p>Authentic Italian pasta dishes made with love.</p>
+                    <p><strong>Website:</strong> <a href="https://www.pastapalace.com" target="_blank">www.pastapalace.com</a></p>
+                    <p><strong>Partner Since:</strong> June 2020</p>
+                    <p><strong>Dinners Donated:</strong> 60</p>
+                </div>
+                <!-- Add more partner items as needed -->
             </div>
-            <!-- Partner 2 -->
-            <div class="partner-item">
-                <h3>Ocean's Delight</h3>
-                <p>Seafood specialties with a view of the harbor.</p>
-                <p><strong>Website:</strong> <a href="https://www.oceansdelight.com" target="_blank">www.oceansdelight.com</a></p>
-                <p><strong>Partner Since:</strong> March 2021</p>
-                <p><strong>Dinners Donated:</strong> 40</p>
-            </div>
-            <!-- Partner 3 -->
-            <div class="partner-item">
-                <h3>Pasta Palace</h3>
-                <p>Authentic Italian pasta dishes made with love.</p>
-                <p><strong>Website:</strong> <a href="https://www.pastapalace.com" target="_blank">www.pastapalace.com</a></p>
-                <p><strong>Partner Since:</strong> June 2020</p>
-                <p><strong>Dinners Donated:</strong> 60</p>
-            </div>
-            <!-- Add more partner items as needed -->
         </div>
     </section>
 
     <!-- Recent Nights Out Section -->
     <section class="recent-nights" id="recent-nights">
-        <div class="section-title">Recent Nights Out</div>
-        <table class="recent-nights-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Restaurant</th>
-                    <th>Event</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Night Out 1 -->
-                <tr>
-                    <td>October 15, 2023</td>
-                    <td>The Golden Spoon</td>
-                    <td>Broadway Show - "The Phantom of the Opera"</td>
-                </tr>
-                <!-- Night Out 2 -->
-                <tr>
-                    <td>October 12, 2023</td>
-                    <td>Ocean's Delight</td>
-                    <td>Concert - "Symphony Under the Stars"</td>
-                </tr>
-                <!-- Night Out 3 -->
-                <tr>
-                    <td>October 10, 2023</td>
-                    <td>Pasta Palace</td>
-                    <td>Baseball Game - "Hometown Heroes vs. City Champs"</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+        <div class="container">
+            <div class="section-title">Recent Nights Out</div>
+            <table class="recent-nights-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Restaurant</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Night Out 1 -->
+                    <tr>
+                        <td>October 15, 2023</td>
+                        <td>The Golden Spoon</td>
+                        <td>Broadway Show - "The Phantom of the Opera"</td>
+                    </tr>
+                    <!-- Night Out 2 -->
+                    <tr>
+                        <td>October 12, 2023</td>
+                        <td>Ocean's Delight</td>
+                        <td>Concert - "Symphony Under the Stars"</td>
+                    </tr>
+                    <!-- Night Out 3 -->
+                    <tr>
+                        <td>October 10, 2023</td>
+                        <td>Pasta Palace</td>
+                        <td>Baseball Game - "Hometown Heroes vs. City Champs"</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <!-- Leaderboard Section -->
     <section class="leaderboard" id="leaderboard">
-        <div class="section-title">Leaderboard</div>
-        <p>Celebrating our top ticket donors by city.</p>
-        <!-- Leaderboard Content -->
-        <div class="leaderboard-content" id="leaderboard-content">
-            <!-- Leaderboard will be populated by JavaScript -->
+        <div class="container">
+            <div class="section-title">Leaderboard</div>
+            <p>Celebrating our top ticket donors by city.</p>
+            <!-- Leaderboard Content -->
+            <div class="leaderboard-content" id="leaderboard-content">
+                <!-- Leaderboard will be populated by JavaScript -->
+            </div>
+            <p><em>Note: We respect the privacy of our donors and families.</em></p>
         </div>
-        <p><em>Note: We respect the privacy of our donors and families.</em></p>
     </section>
 
     <!-- Join Us Section -->
     <section class="join-us" id="sign-up">
-        <div class="section-title">Join Us in Making a Difference</div>
-        <p>We're not just giving away tickets and meals—we're creating moments that matter. Be a part of something special without spending a dime.</p>
-        <div class="cta-buttons">
-            <a href="#donate-tickets" id="donate-tickets-signup">Season Ticket Holders: Donate Tickets</a>
-            <a href="#partners" id="partner-restaurants-signup">Restaurants: Become a Partner</a>
-            <a href="#family-sign-up" id="families-signup">Families: Sign Up for a Night Out</a>
+        <div class="container">
+            <div class="section-title">Join Us in Making a Difference</div>
+            <div class="content">
+                <p>We're not just giving away tickets and meals—we're creating moments that matter. Be a part of something special without spending a dime.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="#donate-tickets" id="donate-tickets-signup">Season Ticket Holders: Donate Tickets</a>
+                <a href="#partners" id="partner-restaurants-signup">Restaurants: Become a Partner</a>
+                <a href="#family-sign-up" id="families-signup">Families: Sign Up for a Night Out</a>
+            </div>
         </div>
     </section>
 
     <!-- Sign Up Section -->
     <section class="sign-up" id="family-sign-up">
-        <div class="section-title">Families: Sign Up for a Night Out</div>
-        <p>If you have a family member with a terminal illness and would like to enjoy a special night out, please fill out the form below.</p>
-        <div class="form-wrapper">
-            <form action="#" method="post">
-                <input class="input" type="text" name="name" placeholder="Your Name" required>
-                <input class="input" type="email" name="email" placeholder="Your Email" required>
-                <input class="input" type="tel" name="phone" placeholder="Your Phone Number" required>
-                <textarea class="textarea" name="message" placeholder="Tell us about your family and any special requests" required></textarea>
-                <button class="button" type="submit">Submit</button>
-            </form>
+        <div class="container">
+            <div class="section-title">Families: Sign Up for a Night Out</div>
+            <p>If you have a family member with a terminal illness and would like to enjoy a special night out, please fill out the form below.</p>
+            <div class="form-wrapper">
+                <form action="#" method="post">
+                    <input class="input" type="text" name="name" placeholder="Your Name" required>
+                    <input class="input" type="email" name="email" placeholder="Your Email" required>
+                    <input class="input" type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <textarea class="textarea" name="message" placeholder="Tell us about your family and any special requests" required></textarea>
+                    <button class="button" type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Contact Us Section -->
     <section class="contact-us" id="contact-us">
-        <!-- Contact Form -->
-        <div class="arch_contact_us_duplicate">
-            <div class="responsive-container-block big-container">
-                <div class="responsive-container-block container">
-                    <div class="responsive-cell-block wk-mobile-12 wk-desk-5 wk-tab-10 wk-ipadp-5" id="ih6s">
-                        <p class="text-blk section-head">
-                            Get in Touch
-                        </p>
-                        <p class="text-blk section-subhead">
-                            We'd love to hear from you! Whether you're interested in donating tickets, becoming a partner, or have any questions.
-                        </p>
-                    </div>
-                    <div class="responsive-cell-block wk-ipadp-6 wk-mobile-12 wk-desk-5 wk-tab-9" id="i6df">
-                        <div class="form-wrapper">
-                            <input class="input input-element" name="Name" placeholder="Name">
-                            <input class="input input-element" name="Contact Number" placeholder="Contact Number">
-                            <input class="input input-element" name="Email" placeholder="Email">
-                            <textarea class="textinput input-element" placeholder="Message"></textarea>
-                            <button class="button">
-                                Send
-                            </button>
-                        </div>
-                        <div class="social-media-icon-container">
-                            <!-- Social Media Icons -->
-                            <div class="icon-block social-icon">
-                                <!-- Facebook Icon SVG -->
-                                <!-- Include SVG code here -->
-                            </div>
-                            <div class="icon-block social-icon">
-                                <!-- Instagram Icon SVG -->
-                                <!-- Include SVG code here -->
-                            </div>
-                            <div class="icon-block social-icon">
-                                <!-- Twitter Icon SVG -->
-                                <!-- Include SVG code here -->
-                            </div>
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="section-title">Get in Touch</div>
+            <p>We'd love to hear from you! Whether you're interested in donating tickets, becoming a partner, or have any questions.</p>
+            <div class="form-wrapper">
+                <form action="#" method="post">
+                    <input class="input" type="text" name="name" placeholder="Your Name" required>
+                    <input class="input" type="email" name="email" placeholder="Your Email" required>
+                    <input class="input" type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <textarea class="textarea" name="message" placeholder="Your Message" required></textarea>
+                    <button class="button" type="submit">Send</button>
+                </form>
+            </div>
+            <div class="social-media-icon-container">
+                <!-- Social Media Icons -->
+                <div class="icon-block">
+                    <!-- Facebook Icon SVG -->
+                    <!-- Include SVG code here -->
+                </div>
+                <div class="icon-block">
+                    <!-- Instagram Icon SVG -->
+                    <!-- Include SVG code here -->
+                </div>
+                <div class="icon-block">
+                    <!-- Twitter Icon SVG -->
+                    <!-- Include SVG code here -->
                 </div>
             </div>
         </div>
