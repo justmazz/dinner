@@ -5,703 +5,331 @@
     <title>Dinner and a Show - A Night to Remember</title>
     <!-- Meta Tags for Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Lato:400,700|Nunito:400,700&display=swap" rel="stylesheet">
-    <!-- Inline CSS for Styling -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <!-- Additional Styles -->
     <style>
-        /* Base Styles */
         body {
-            margin: 0;
-            font-family: 'Open Sans', sans-serif;
-            background-color: #FFF8E1; /* Light warm background */
-            color: #4E342E; /* Dark brown */
-        }
-        header, nav, section, footer {
-            padding: 20px;
-        }
-        header {
-            background-color: #FFE0B2; /* Light orange */
-            color: #4E342E;
-            text-align: center;
-        }
-        nav {
-            background-color: #FFB74D; /* Warm orange */
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav a {
-            margin: 10px 15px;
-            color: #4E342E;
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #D84315; /* Darker warm orange */
-        }
-        nav a::after {
-            content: '';
-            height: 2px;
-            background: #D84315;
-            width: 0;
-            position: absolute;
-            left: 50%;
-            bottom: -5px;
-            transition: 0.3s;
-        }
-        nav a:hover::after {
-            width: 100%;
-            left: 0;
-        }
-        .hero {
-            background-color: #FFE0B2; /* Light orange */
-            color: #4E342E;
-            text-align: center;
-            padding: 60px 20px;
-            background-image: linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%);
-        }
-        .hero h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 1.2em;
-            font-weight: 300;
-        }
-        .cta-buttons a {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 25px;
-            background-color: #FF8A65; /* Bright orange */
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .cta-buttons a:hover {
-            background-color: #D84315; /* Darker orange */
-            color: #fff;
-        }
-        /* Section Background Colors */
-        .counters {
-            background-color: #FFF3E0; /* Very light warm color */
-        }
-        .about-us {
-            background-color: #FFE0B2; /* Light orange */
-        }
-        .how-it-works {
-            background-color: #FFF3E0;
-        }
-        .donate-tickets {
-            background-color: #FFE0B2;
-        }
-        .partners {
-            background-color: #FFF3E0;
-        }
-        .recent-nights {
-            background-color: #FFE0B2;
-        }
-        .leaderboard {
-            background-color: #FFF3E0;
-        }
-        .join-us {
-            background-color: #FFCC80; /* Slightly darker orange */
-            color: #4E342E;
-        }
-        .contact-us {
-            background-color: #FFE0B2;
-        }
-        .sign-up {
-            background-color: #FFF3E0;
-        }
-        /* Section Titles */
-        .section-title {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            font-weight: 700;
-            text-align: center;
-            color: #D84315; /* Darker warm orange */
-        }
-        /* Counters */
-        .counter-item {
-            display: inline-block;
-            margin: 20px;
-            font-size: 1.5em;
-            font-weight: 600;
-        }
-        /* About Us & How It Works */
-        .about-us p, .how-it-works p, .donate-tickets p, .partners p, .join-us p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            font-size: 1.15em;
-            line-height: 1.8em;
-            font-weight: 300;
-            color: #4E342E;
-        }
-        .how-it-works ol {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            text-align: left;
-            font-size: 1.15em;
-            line-height: 1.8em;
-            font-weight: 300;
-            color: #4E342E;
-            padding-left: 20px;
-        }
-        .how-it-works ol li {
-            margin-bottom: 20px;
-        }
-        /* Donate Tickets */
-        .donate-tickets .email-address {
-            font-size: 1.4em;
-            color: #E64A19; /* Warm red */
-            font-weight: 600;
-        }
-        /* Partners Section */
-        .partners-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .partner-item {
-            width: 300px;
-            margin: 15px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            text-align: left;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .partner-item:hover {
-            transform: translateY(-5px);
-        }
-        .partner-item h3 {
-            margin-top: 0;
-            font-weight: 700;
-            color: #D84315;
-        }
-        .partner-item p {
-            margin: 10px 0;
-            font-weight: 300;
-            color: #4E342E;
-        }
-        /* Recent Nights Out Table */
-        .recent-nights-table {
-            max-width: 1000px;
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 100%;
-            font-size: 1em;
-            overflow-x: auto;
-            background-color: #fff;
-        }
-        .recent-nights-table th, .recent-nights-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        .recent-nights-table th {
-            background-color: #FFB74D; /* Warm orange */
-            color: #4E342E;
-            font-weight: 600;
-        }
-        .recent-nights-table tr:hover {
-            background-color: #f9f9f9;
-        }
-        /* Leaderboard */
-        .leaderboard-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-            color: #4E342E;
-        }
-        .leaderboard-content h3 {
-            margin-top: 30px;
-            font-weight: 700;
-            color: #D84315;
-        }
-        .leaderboard-content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .leaderboard-content ul li {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-            font-weight: 300;
-            color: #4E342E;
-        }
-        /* Join Us Section */
-        .join-us p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            font-size: 1.2em;
-            line-height: 1.8em;
-            font-weight: 300;
-            color: #4E342E;
-        }
-        .join-us .cta-buttons a {
-            background-color: #FF8A65; /* Bright orange */
-            color: #fff;
-            margin: 10px;
-        }
-        .join-us .cta-buttons a:hover {
-            background-color: #D84315; /* Darker orange */
-            color: #fff;
-        }
-        /* Sign Up Section */
-        .sign-up p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            font-size: 1.15em;
-            line-height: 1.8em;
-            font-weight: 300;
-            color: #4E342E;
-            text-align: center;
-        }
-        .sign-up .form-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .sign-up .input, .sign-up .textarea {
-            width: 100%;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            padding: 15px;
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-family: 'Open Sans', sans-serif;
-            color: #4E342E;
-        }
-        .sign-up .input:focus, .sign-up .textarea:focus {
-            border-color: #FF8A65;
-            outline: none;
-        }
-        .sign-up .button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #FF8A65; /* Bright orange */
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .sign-up .button:hover {
-            background-color: #D84315; /* Darker orange */
-        }
-        /* Contact Us Section Styles */
-        .arch_contact_us_duplicate * {
             font-family: 'Nunito', sans-serif;
-            color: #4E342E;
-        }
-        .arch_contact_us_duplicate .icon-block svg {
-            width: 100%;
-            height: 100%;
-        }
-        .arch_contact_us_duplicate .icon-block {
-            width: 30px;
-            height: 30px;
-        }
-        .arch_contact_us_duplicate .text-blk {
-            margin: 0;
-            padding: 0;
-            line-height: 25px;
-        }
-        .arch_contact_us_duplicate .responsive-container-block {
-            min-height: 75px;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 0 auto;
-        }
-        .arch_contact_us_duplicate .responsive-cell-block {
-            min-height: 75px;
-        }
-        .arch_contact_us_duplicate .responsive-container-block.big-container {
-            justify-content: center;
-            align-items: center;
-            padding: 0 50px;
-            background-color: #FFE0B2; /* Match the contact section background */
-        }
-        .arch_contact_us_duplicate .responsive-container-block.container {
-            max-width: 1100px;
-            justify-content: space-evenly;
-        }
-        .arch_contact_us_duplicate .text-blk.section-head {
-            font-size: 2.5em;
-            line-height: 1.2em;
-            margin-bottom: 24px;
-            color: #D84315;
-            text-align: center;
-        }
-        .arch_contact_us_duplicate .text-blk.section-subhead {
-            font-size: 1.1em;
-            line-height: 1.6em;
-            color: #4E342E;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        .arch_contact_us_duplicate .input {
-            width: 100%;
-            height: 50px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            padding: 0 15px;
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-family: 'Open Sans', sans-serif;
-            color: #4E342E;
-        }
-        .arch_contact_us_duplicate .textinput {
-            width: 100%;
-            height: 125px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            padding: 15px;
-            font-size: 16px;
-            margin-bottom: 27px;
-            resize: vertical;
-            font-family: 'Open Sans', sans-serif;
-            color: #4E342E;
-        }
-        .arch_contact_us_duplicate .input:focus, .arch_contact_us_duplicate .textinput:focus {
-            border-color: #FF8A65;
-            outline: none;
-        }
-        .arch_contact_us_duplicate .button {
-            height: 50px;
-            min-width: 240px;
-            font-size: 16px;
-            color: #fff;
-            border: none;
-            margin-bottom: 60px;
-            background-color: #FF8A65;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: background-color 0.3s;
-        }
-        .arch_contact_us_duplicate .button:hover {
-            background-color: #D84315;
-        }
-        .arch_contact_us_duplicate .form-wrapper {
-            border-bottom: 4px solid #FFB74D;
-            margin-bottom: 60px;
-        }
-        .arch_contact_us_duplicate .social-media-icon-container {
-            display: flex;
-            max-width: 400px;
-            justify-content: space-evenly;
-            margin: 0 auto;
-        }
-        .arch_contact_us_duplicate .icon-block.social-icon {
-            fill: #D84315;
-        }
-        /* Footer */
-        footer {
-            background-color: #FFB74D; /* Warm orange */
-            color: #4E342E;
-            text-align: center;
-            padding: 20px;
-        }
-        footer p {
-            margin: 5px 0;
-            font-weight: 300;
-        }
-        footer a {
-            color: #D84315;
-            text-decoration: none;
-            margin: 0 5px;
-            font-weight: 600;
-        }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            .section-title {
-                font-size: 2em;
-            }
-            .cta-buttons a {
-                padding: 10px 20px;
-            }
-            nav a {
-                margin: 5px 10px;
-            }
-            .partner-item {
-                width: 100%;
-            }
-            .recent-nights-table th, .recent-nights-table td {
-                padding: 10px;
-            }
-            .sign-up .form-wrapper {
-                padding: 20px;
-            }
-            .arch_contact_us_duplicate .responsive-container-block.container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .arch_contact_us_duplicate .text-blk.section-head {
-                font-size: 2em;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>Dinner and a Show</h1>
-        <p><em>"A Night to Remember—Beyond Dollars and Cents"</em></p>
-    </header>
-
-    <!-- Navigation Menu -->
-    <nav>
-        <a href="#about-us">About Us</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#donate-tickets">Donate Tickets</a>
-        <a href="#partners">Partners</a>
-        <a href="#recent-nights">Recent Nights Out</a>
-        <a href="#leaderboard">Leaderboard</a>
-        <a href="#sign-up">Sign Up</a>
-        <a href="#contact-us">Contact Us</a>
-    </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>Share the Joy of a Memorable Night Out</h1>
-        <p>We're not asking for money—just your unused tickets and a warm meal to make a family's night unforgettable.</p>
-        <div class="cta-buttons">
-            <a href="#donate-tickets" id="donate-tickets-btn">Donate Tickets</a>
-            <a href="#partners" id="become-partner-btn">Become a Partner</a>
-            <a href="#family-sign-up" id="sign-up-btn">Sign Up for a Night Out</a>
+    <section class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+        <img src="your-background-image.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-4xl lg:mx-0 text-center">
+                <div class="mb-8">
+                    <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl">Dinner and a Show</h1>
+                    <p class="mt-6 text-3xl sm:text-4xl leading-8 text-gray-300"><em>"A Night to Remember—Beyond Dollars and Cents"</em></p>
+                </div>
+                <p class="mt-6 text-xl leading-8 text-gray-300">We're not asking for money—just your unused tickets and a warm meal to make a family's night unforgettable.</p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="#donate-tickets" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100">Donate Tickets</a>
+                    <a href="#partners" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100">Become a Partner</a>
+                    <a href="#family-sign-up" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100">Sign Up for a Night Out</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Counters Section -->
-    <section class="counters">
-        <div class="section-title">Our Impact So Far</div>
-        <div class="counter-item">
-            <strong id="tickets-donated">0</strong><br>Tickets Donated
-        </div>
-        <div class="counter-item">
-            <strong id="meals-donated">0</strong><br>Meals Donated
-        </div>
-        <div class="counter-item">
-            <strong id="families-waiting">0</strong><br>Families Waiting
+    <section class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Impact So Far</h2>
+            <div class="mt-10 flex flex-wrap justify-center gap-10">
+                <div class="flex flex-col items-center">
+                    <strong id="tickets-donated" class="text-6xl font-bold text-indigo-600">0</strong>
+                    <span class="mt-2 text-xl font-semibold text-gray-900">Tickets Donated</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <strong id="meals-donated" class="text-6xl font-bold text-indigo-600">0</strong>
+                    <span class="mt-2 text-xl font-semibold text-gray-900">Meals Donated</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <strong id="families-waiting" class="text-6xl font-bold text-indigo-600">0</strong>
+                    <span class="mt-2 text-xl font-semibold text-gray-900">Families Waiting</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Us Section -->
-    <section class="about-us" id="about-us">
-        <div class="section-title">About Us</div>
-        <p>
-            At Dinner and a Show, we believe in the power of community and shared experiences. We're a non-profit connecting families with a terminally ill member to generous season ticket holders and restaurants offering a free meal. No monetary donations—just heartfelt contributions to create a night to remember.
-        </p>
+    <section id="about-us" class="bg-gray-50 py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600">About Us</h2>
+                <p class="mt-6 text-xl leading-8 text-gray-600">
+                    At Dinner and a Show, we believe in the power of community and shared experiences. We're a non-profit connecting families with a terminally ill member to generous season ticket holders and restaurants offering a free meal. No monetary donations—just heartfelt contributions to create a night to remember.
+                </p>
+            </div>
+        </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="section-title">How It Works</div>
-        <ol>
-            <li>
-                <strong>Donate Your Tickets</strong><br>
-                Season ticket holders send their unused digital tickets to our email.
-            </li>
-            <li>
-                <strong>Partner Restaurants Offer a Meal</strong><br>
-                Local eateries sign up to provide a complimentary dining experience.
-            </li>
-            <li>
-                <strong>We Make the Match</strong><br>
-                Families in need are paired with tickets and a dinner for a special night out.
-            </li>
-        </ol>
-        <p><em>It's that simple! Together, we're making unforgettable memories in our community.</em></p>
+    <section id="how-it-works" class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="flex flex-col justify-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600">How It Works</h2>
+                    <ol class="mt-10 space-y-6 text-xl leading-8 text-gray-600 list-decimal list-inside">
+                        <li>
+                            <strong>Donate Your Tickets</strong><br>
+                            Season ticket holders send their unused digital tickets to our email.
+                        </li>
+                        <li>
+                            <strong>Partner Restaurants Offer a Meal</strong><br>
+                            Local eateries sign up to provide a complimentary dining experience.
+                        </li>
+                        <li>
+                            <strong>We Make the Match</strong><br>
+                            Families in need are paired with tickets and a dinner for a special night out.
+                        </li>
+                    </ol>
+                    <p class="mt-6 text-xl leading-8 text-gray-600"><em>It's that simple! Together, we're making unforgettable memories in our community.</em></p>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="how-it-works-illustration.jpg" alt="How It Works Illustration" class="w-full h-full rounded-xl">
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Donate Tickets Section -->
-    <section class="donate-tickets" id="donate-tickets">
-        <div class="section-title">Season Ticket Holders: Donate Tickets</div>
-        <p>If you have tickets you're not planning to use, you can make a family's night unforgettable. Simply send any of your tickets from your Ticketmaster, StubHub, MLB.com, or other ticket accounts to our email address:</p>
-        <p class="email-address"><strong>dinnerandashow@gmail.com</strong></p>
-        <p>Your generous donation will help create lasting memories for families in your community.</p>
+    <section id="donate-tickets" class="bg-gray-50 py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600">Season Ticket Holders: Donate Tickets</h2>
+            <p class="mt-6 text-xl leading-8 text-gray-600">If you have tickets you're not planning to use, you can make a family's night unforgettable. Simply send any of your tickets from your Ticketmaster, StubHub, MLB.com, or other ticket accounts to our email address:</p>
+            <p class="mt-4 text-2xl font-semibold text-indigo-600">dinnerandashow@gmail.com</p>
+            <p class="mt-6 text-xl leading-8 text-gray-600">Your generous donation will help create lasting memories for families in your community.</p>
+        </div>
     </section>
 
     <!-- Partners Section -->
-    <section class="partners" id="partners">
-        <div class="section-title">Our Partners</div>
-        <div class="partners-list">
-            <!-- Partner 1 -->
-            <div class="partner-item">
-                <h3>The Golden Spoon</h3>
-                <p>A family-owned restaurant offering the finest in local cuisine.</p>
-                <p><strong>Website:</strong> <a href="https://www.goldenspoon.com" target="_blank">www.goldenspoon.com</a></p>
-                <p><strong>Partner Since:</strong> January 2022</p>
-                <p><strong>Dinners Donated:</strong> 25</p>
+    <section id="partners" class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600 text-center">Our Partners</h2>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Partner 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-bold text-gray-900">The Golden Spoon</h3>
+                    <p class="mt-4 text-xl leading-8 text-gray-600">A family-owned restaurant offering the finest in local cuisine.</p>
+                    <p class="mt-4 text-gray-600"><strong>Website:</strong> <a href="https://www.goldenspoon.com" class="text-indigo-600" target="_blank">www.goldenspoon.com</a></p>
+                    <p class="mt-2 text-gray-600"><strong>Partner Since:</strong> January 2022</p>
+                    <p class="mt-2 text-gray-600"><strong>Dinners Donated:</strong> 25</p>
+                </div>
+                <!-- Partner 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-bold text-gray-900">Ocean's Delight</h3>
+                    <p class="mt-4 text-xl leading-8 text-gray-600">Seafood specialties with a view of the harbor.</p>
+                    <p class="mt-4 text-gray-600"><strong>Website:</strong> <a href="https://www.oceansdelight.com" class="text-indigo-600" target="_blank">www.oceansdelight.com</a></p>
+                    <p class="mt-2 text-gray-600"><strong>Partner Since:</strong> March 2021</p>
+                    <p class="mt-2 text-gray-600"><strong>Dinners Donated:</strong> 40</p>
+                </div>
+                <!-- Partner 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-bold text-gray-900">Pasta Palace</h3>
+                    <p class="mt-4 text-xl leading-8 text-gray-600">Authentic Italian pasta dishes made with love.</p>
+                    <p class="mt-4 text-gray-600"><strong>Website:</strong> <a href="https://www.pastapalace.com" class="text-indigo-600" target="_blank">www.pastapalace.com</a></p>
+                    <p class="mt-2 text-gray-600"><strong>Partner Since:</strong> June 2020</p>
+                    <p class="mt-2 text-gray-600"><strong>Dinners Donated:</strong> 60</p>
+                </div>
             </div>
-            <!-- Partner 2 -->
-            <div class="partner-item">
-                <h3>Ocean's Delight</h3>
-                <p>Seafood specialties with a view of the harbor.</p>
-                <p><strong>Website:</strong> <a href="https://www.oceansdelight.com" target="_blank">www.oceansdelight.com</a></p>
-                <p><strong>Partner Since:</strong> March 2021</p>
-                <p><strong>Dinners Donated:</strong> 40</p>
-            </div>
-            <!-- Partner 3 -->
-            <div class="partner-item">
-                <h3>Pasta Palace</h3>
-                <p>Authentic Italian pasta dishes made with love.</p>
-                <p><strong>Website:</strong> <a href="https://www.pastapalace.com" target="_blank">www.pastapalace.com</a></p>
-                <p><strong>Partner Since:</strong> June 2020</p>
-                <p><strong>Dinners Donated:</strong> 60</p>
-            </div>
-            <!-- Add more partner items as needed -->
         </div>
     </section>
 
     <!-- Recent Nights Out Section -->
-    <section class="recent-nights" id="recent-nights">
-        <div class="section-title">Recent Nights Out</div>
-        <table class="recent-nights-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Restaurant</th>
-                    <th>Event</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Night Out 1 -->
-                <tr>
-                    <td>October 15, 2023</td>
-                    <td>The Golden Spoon</td>
-                    <td>Broadway Show - "The Phantom of the Opera"</td>
-                </tr>
-                <!-- Night Out 2 -->
-                <tr>
-                    <td>October 12, 2023</td>
-                    <td>Ocean's Delight</td>
-                    <td>Concert - "Symphony Under the Stars"</td>
-                </tr>
-                <!-- Night Out 3 -->
-                <tr>
-                    <td>October 10, 2023</td>
-                    <td>Pasta Palace</td>
-                    <td>Baseball Game - "Hometown Heroes vs. City Champs"</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+    <section id="recent-nights" class="bg-gray-50 py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600 text-center">Recent Nights Out</h2>
+            <div class="mt-10 overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xl font-medium text-gray-900 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-3 text-left text-xl font-medium text-gray-900 uppercase tracking-wider">Restaurant</th>
+                            <th class="px-6 py-3 text-left text-xl font-medium text-gray-900 uppercase tracking-wider">Event</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Night Out 1 -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-xl text-gray-600">October 15, 2023</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-xl text-gray-600">The Golden Spoon</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-xl text-gray-600">Broadway Show - "The Phantom of the Opera"</td>
+                        </tr>
+                        <!-- Night Out 2 -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-xl text-gray-600">October 12, 2023</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-xl text-gray-600">Ocean's Delight</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-xl text-gray-600">Concert - "Symphony Under the Stars"</td>
+                        </tr>
+                        <!-- Night Out 3 -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-xl text-gray-600">October 10, 2023</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-xl text-gray-600">Pasta Palace</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-xl text-gray-600">Baseball Game - "Hometown Heroes vs. City Champs"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </section>
 
     <!-- Leaderboard Section -->
-    <section class="leaderboard" id="leaderboard">
-        <div class="section-title">Leaderboard</div>
-        <p>Celebrating our top ticket donors by city.</p>
-        <!-- Leaderboard Content -->
-        <div class="leaderboard-content" id="leaderboard-content">
-            <!-- Leaderboard will be populated by JavaScript -->
-        </div>
-        <p><em>Note: We respect the privacy of our donors and families.</em></p>
-    </section>
-
-    <!-- Join Us Section -->
-    <section class="join-us" id="sign-up">
-        <div class="section-title">Join Us in Making a Difference</div>
-        <p>We're not just giving away tickets and meals—we're creating moments that matter. Be a part of something special without spending a dime.</p>
-        <div class="cta-buttons">
-            <a href="#donate-tickets" id="donate-tickets-signup">Season Ticket Holders: Donate Tickets</a>
-            <a href="#partners" id="partner-restaurants-signup">Restaurants: Become a Partner</a>
-            <a href="#family-sign-up" id="families-signup">Families: Sign Up for a Night Out</a>
+    <section id="leaderboard" class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600">Leaderboard</h2>
+            <p class="mt-6 text-xl leading-8 text-gray-600">Celebrating our top ticket donors by city.</p>
+            <div id="leaderboard-content" class="mt-10">
+                <!-- Leaderboard will be populated by JavaScript -->
+            </div>
+            <p class="mt-6 text-xl leading-8 text-gray-600"><em>Note: We respect the privacy of our donors and families.</em></p>
         </div>
     </section>
 
     <!-- Sign Up Section -->
-    <section class="sign-up" id="family-sign-up">
-        <div class="section-title">Families: Sign Up for a Night Out</div>
-        <p>If you have a family member with a terminal illness and would like to enjoy a special night out, please fill out the form below.</p>
-        <div class="form-wrapper">
-            <form action="#" method="post">
-                <input class="input" type="text" name="name" placeholder="Your Name" required>
-                <input class="input" type="email" name="email" placeholder="Your Email" required>
-                <input class="input" type="tel" name="phone" placeholder="Your Phone Number" required>
-                <textarea class="textarea" name="message" placeholder="Tell us about your family and any special requests" required></textarea>
-                <button class="button" type="submit">Submit</button>
-            </form>
+    <section id="sign-up" class="bg-gray-50 py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600">Join Us in Making a Difference</h2>
+            <p class="mt-6 text-xl leading-8 text-gray-600">We're not just giving away tickets and meals—we're creating moments that matter. Be a part of something special without spending a dime.</p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a href="#donate-tickets" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">Season Ticket Holders: Donate Tickets</a>
+                <a href="#partners" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">Restaurants: Become a Partner</a>
+                <a href="#family-sign-up" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">Families: Sign Up for a Night Out</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Families Sign Up Section -->
+    <section id="family-sign-up" class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600 text-center">Families: Sign Up for a Night Out</h2>
+                <p class="mt-6 text-xl leading-8 text-gray-600 text-center">If you have a family member with a terminal illness and would like to enjoy a special night out, please fill out the form below.</p>
+                <div class="mt-10">
+                    <form action="#" method="post" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-xl font-medium text-gray-700">Your Name</label>
+                                <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-xl focus:border-indigo-500 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xl font-medium text-gray-700">Your Email</label>
+                                <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-xl focus:border-indigo-500 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-xl font-medium text-gray-700">Your Phone Number</label>
+                                <input type="tel" name="phone" id="phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-xl focus:border-indigo-500 focus:ring-indigo-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-xl font-medium text-gray-700">Tell us about your family and any special requests</label>
+                            <textarea name="message" id="message" rows="5" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-xl focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="rounded-md bg-indigo-600 px-5 py-3 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Us Section -->
-    <section class="contact-us" id="contact-us">
-        <!-- Contact Form -->
-        <div class="arch_contact_us_duplicate">
-            <div class="responsive-container-block big-container">
-                <div class="responsive-container-block container">
-                    <div class="responsive-cell-block wk-mobile-12 wk-desk-5 wk-tab-10 wk-ipadp-5" id="ih6s">
-                        <p class="text-blk section-head">
-                            Get in Touch
-                        </p>
-                        <p class="text-blk section-subhead">
-                            We'd love to hear from you! Whether you're interested in donating tickets, becoming a partner, or have any questions.
-                        </p>
-                    </div>
-                    <div class="responsive-cell-block wk-ipadp-6 wk-mobile-12 wk-desk-5 wk-tab-9" id="i6df">
-                        <div class="form-wrapper">
-                            <input class="input input-element" name="Name" placeholder="Name">
-                            <input class="input input-element" name="Contact Number" placeholder="Contact Number">
-                            <input class="input input-element" name="Email" placeholder="Email">
-                            <textarea class="textinput input-element" placeholder="Message"></textarea>
-                            <button class="button">
-                                Send
-                            </button>
-                        </div>
-                        <div class="social-media-icon-container">
-                            <!-- Social Media Icons -->
-                            <div class="icon-block social-icon">
-                                <!-- Facebook Icon SVG -->
-                                <!-- Include SVG code here -->
+    <section id="contact-us" class="bg-gray-50 py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600">Get in Touch</h2>
+                <p class="mt-6 text-xl leading-8 text-gray-600">We'd love to hear from you! Whether you're interested in donating tickets, becoming a partner, or have any questions.</p>
+                <div class="mt-10">
+                    <form action="#" method="post" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="contact-name" class="block text-xl font-medium text-gray-700">Your Name</label>
+                                <input type="text" name="name" id="contact-name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-xl focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
-                            <div class="icon-block social-icon">
-                                <!-- Instagram Icon SVG -->
-                                <!-- Include SVG code here -->
+                            <div>
+                                <label for="contact-email" class="block text-xl font-medium text-gray-700">Your Email</label>
+                                <input type="email" name="email" id="contact-email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-xl focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
-                            <div class="icon-block social-icon">
-                                <!-- Twitter Icon SVG -->
-                                <!-- Include SVG code here -->
+                            <div>
+                                <label for="contact-phone" class="block text-xl font-medium text-gray-700">Your Phone Number</label>
+                                <input type="tel" name="phone" id="contact-phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-xl focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
                         </div>
-                    </div>
+                        <div>
+                            <label for="contact-message" class="block text-xl font-medium text-gray-700">Your Message</label>
+                            <textarea name="message" id="contact-message" rows="5" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-xl focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="rounded-md bg-indigo-600 px-5 py-3 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500">Send</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="mt-10 flex justify-center space-x-6">
+                    <!-- Social Media Icons -->
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Facebook</span>
+                        <!-- Facebook Icon SVG -->
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <!-- Facebook SVG Path -->
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Instagram</span>
+                        <!-- Instagram Icon SVG -->
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <!-- Instagram SVG Path -->
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Twitter</span>
+                        <!-- Twitter Icon SVG -->
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <!-- Twitter SVG Path -->
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer Section -->
-    <footer>
-        <p>
-            <a href="#about-us">About Us</a> |
-            <a href="#how-it-works">How It Works</a> |
-            <a href="#donate-tickets">Donate Tickets</a> |
-            <a href="#partners">Partners</a> |
-            <a href="#recent-nights">Recent Nights Out</a> |
-            <a href="#leaderboard">Leaderboard</a> |
-            <a href="#sign-up">Sign Up</a> |
-            <a href="#contact-us">Contact Us</a>
-        </p>
-        <p>© 2023 Dinner and a Show. All rights reserved.</p>
+    <footer class="bg-white">
+        <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+            <div class="flex justify-center space-x-6 md:order-2">
+                <!-- Social Media Icons -->
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Facebook</span>
+                    <!-- Facebook Icon SVG -->
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <!-- Facebook SVG Path -->
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Instagram</span>
+                    <!-- Instagram Icon SVG -->
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <!-- Instagram SVG Path -->
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Twitter</span>
+                    <!-- Twitter Icon SVG -->
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <!-- Twitter SVG Path -->
+                    </svg>
+                </a>
+            </div>
+            <div class="mt-8 md:order-1 md:mt-0">
+                <p class="text-center text-base leading-6 text-gray-500">© 2023 Dinner and a Show. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <!-- JavaScript for Interactivity -->
@@ -755,9 +383,11 @@
         leaderboardData.forEach(cityData => {
             const cityHeading = document.createElement('h3');
             cityHeading.textContent = cityData.city;
+            cityHeading.className = 'text-2xl font-bold text-gray-900 mt-6';
             leaderboardContent.appendChild(cityHeading);
 
             const donorList = document.createElement('ul');
+            donorList.className = 'mt-4 space-y-2 text-xl text-gray-600';
 
             cityData.donors.forEach(donor => {
                 const donorItem = document.createElement('li');
@@ -767,33 +397,7 @@
 
             leaderboardContent.appendChild(donorList);
         });
-
-        // Additional Interactive Features
-        // Change CTA button text on hover
-        const donateTicketsBtn = document.getElementById('donate-tickets-btn');
-        const becomePartnerBtn = document.getElementById('become-partner-btn');
-        const signUpBtn = document.getElementById('sign-up-btn');
-
-        donateTicketsBtn.addEventListener('mouseover', () => {
-            donateTicketsBtn.textContent = 'Click to Donate Tickets';
-        });
-        donateTicketsBtn.addEventListener('mouseout', () => {
-            donateTicketsBtn.textContent = 'Donate Tickets';
-        });
-
-        becomePartnerBtn.addEventListener('mouseover', () => {
-            becomePartnerBtn.textContent = 'Click to Become a Partner';
-        });
-        becomePartnerBtn.addEventListener('mouseout', () => {
-            becomePartnerBtn.textContent = 'Become a Partner';
-        });
-
-        signUpBtn.addEventListener('mouseover', () => {
-            signUpBtn.textContent = 'Click to Sign Up';
-        });
-        signUpBtn.addEventListener('mouseout', () => {
-            signUpBtn.textContent = 'Sign Up for a Night Out';
-        });
     </script>
+
 </body>
 </html>
